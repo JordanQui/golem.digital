@@ -97,6 +97,10 @@ export default {
         background: black;
         display: flex;
         justify-content: center;
+
+        &-text {
+          text-align: center;
+        }
       }
     }
 
