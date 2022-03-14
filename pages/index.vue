@@ -76,6 +76,7 @@ export default {
 
     &-item {
       position: relative;
+      height: 240px;
 
       &:hover {
         .ac-home_grid-item-legend {
