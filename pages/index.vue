@@ -1,9 +1,15 @@
 <template>
-  <div class="ac-pagesWrapper">
-    <section class="ac-homeGrid">
-      <div v-for="project in projects" :key="project.id" class="ac-homeGrid_item">
-        <nuxt-link :to="`/project/${project.uid}`" class="ac-homeGrid_itemWrapper">
+  <div class="ac-home">
+    <section class="ac-home_bandeau">
+      <span v-for="n in 30" :key="n.id">golem</span>
+    </section>
+    <section class="ac-home_grid">
+      <div v-for="project in projects" :key="project.id" class="ac-home_grid-item">
+        <nuxt-link :to="`/project/${project.uid}`" class="ac-home_grid-itemWrapper">
           <img :src="project.data.caroussel[0].image01.url" alt="">
+          <div class="ac-home_grid-item-legend">
+            <span class="ac-home_grid-item-legend-text">{{ project.data.title[0].text }}</span>
+          </div>
         </nuxt-link>
       </div>
     </section>
@@ -42,32 +48,113 @@ export default {
 <style lang="scss" scoped>
 @import '@/css/main.scss';
 
-.ac-homeGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 10px;
-  grid-auto-rows: minmax(100px, auto);
+.ac-home {
+  padding: 0 5%;
+  overflow: hidden;
 
-  &_item {
-    height: 260px;
+  &_bandeau {
+    font-size: 30px;
+    font-family: "Raleway";
+    font-weight: 800;
+    font-style: italic;
+    text-transform: uppercase;
+    line-height: 60px;
+    transform: translateX(-15vw);
+    overflow: hidden;
+    width: 300%;
+
+    span {
+      padding-right: 10px;
+    }
   }
 
-  &_itemWrapper {
-    display: block;
-    grid-column: 1;
-    grid-row: 1;
-    height: 100%;
+  &_grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 5%;
+    margin-bottom: 320px;
 
-    img {
-      object-fit: cover;
+    &-item {
+      position: relative;
+
+      &:hover {
+        .ac-home_grid-item-legend {
+          opacity: 1;
+        }
+      }
+
+      &-legend {
+        transition: opacity .3s ease-in;
+        opacity: 0;
+        font-size: 22px;
+        font-weight: 800;
+        font-style: italic;
+        color: white;
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        transform: translateY(-50%);
+        background: black;
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    &-itemWrapper {
+      display: block;
+      grid-column: 1;
+      grid-row: 1;
       height: 100%;
+      overflow: hidden;
+
+      img {
+        object-fit: cover;
+        height: 100%;
+      }
     }
   }
 }
 
 @include media(xs) {
-  .ac-homeGrid {
+  .ac-home_grid {
     grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@include media(s) {
+  .ac-home {
+    padding: 0 1%;
+  }
+  .ac-home_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@include media (m) {
+  .ac-home_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@include media (l) {
+  .ac-home {
+    padding: 50px 8%;
+  }
+  .ac-home_grid {
+    grid-template-columns: repeat(3, 1fr);
+    // grid-template-rows: repeat(15, 25vw);
+    // grid-auto-rows: minmax(25vw, auto);
+  }
+  .ac-home_grid-itemWrapper img {
+    height: 100%;
+  }
+  .ac-home_bandeau {
+    font-size: 42px;
+    transform: translate(-20vw, 0vw) rotate(-90deg);
+    width: 130%;
+    left: -42%;
+    top: 50%;
+    position: fixed;
   }
 }
 

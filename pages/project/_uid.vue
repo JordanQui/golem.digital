@@ -28,6 +28,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '@/css/main.scss';
+
 .ac-project {
   background: black;
   height: 100vh;
@@ -68,6 +70,14 @@ export default {
       flex-shrink: 0;
       height: 100%;
       width: 100vw;
+    }
+  }
+}
+
+@include media(m) {
+  .ac-project {
+    h2 {
+      font-size: 38px;
     }
   }
 }
