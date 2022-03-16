@@ -5,7 +5,12 @@
       <div ref="caroussel" class="ac-project_caroussel-wrapper">
         <div v-for="slide in document.data.caroussel" :key="slide.id" class="ac-project_caroussel-item">
           <img v-if="slide.image01.url" :src="slide.image01.url" alt="">
-          <video  webkit-playsinline playsinline autoplay controls="false" muted loop v-else-if="slide.video.url" :src="slide.video.url"></video>
+          <video 
+            v-else-if="slide.video.url" 
+            webkit-playsinline playsinline autoplay controls="false" muted loop 
+            :src="slide.video.url"
+            style="pointer-events: none"
+          ></video>
         </div>
       </div>
       <div class="ac-project_caroussel-pagination">
@@ -47,7 +52,6 @@ export default {
           // downscroll code
       } else {
           // upscroll code
-          // this.setProjectHeigh()
       }
       lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
     },

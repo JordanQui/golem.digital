@@ -29,8 +29,8 @@ export default {
       scrollTrigger: {
         trigger: ".ac-navgrid",
         start: `-${window.innerHeight / 3} top`,
-        end: `center ${window.innerHeight / 3}`,
-        scrub: true
+        end: `top top`,
+        scrub: true,
       }
     })
   }
