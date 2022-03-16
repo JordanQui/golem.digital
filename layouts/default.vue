@@ -10,21 +10,29 @@
 import NavBar from '../components/NavBar.vue'
 import NavGrid from '../components/NavGrid.vue'
 
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+if (process.client) {
+  gsap.registerPlugin(ScrollTrigger);
+}
+
 export default {
   name: 'default',
   components: {
     NavBar,
     NavGrid
   },
-  methods: {
-    handleBackground() {
-      let s = document.documentElement.scrollTop / 2.99
-      this.$refs.mainwrapper.style.backgroundColor = `rgba(${s},${s},${s})`
-    }
-  },
   mounted() {
-    console.log('mounted layout')
-    window.addEventListener('scroll', () => { this.handleBackground() } ) 
+   gsap.to(".ac-layoutWrapper", {
+      backgroundColor: '#FFFF',
+      scrollTrigger: {
+        trigger: ".ac-navgrid",
+        start: "-400px top",
+        end: "center 550px",
+        scrub: true,
+      }
+    })
   }
 }
 </script>
@@ -32,7 +40,7 @@ export default {
 <style lang="scss" scoped>
 .ac-layoutWrapper {
   will-change: auto;
-  background-color: rgb(0,0,0);
+  background-color: #000;
   transition: background-color .2s ease-in;
 }
 </style>
