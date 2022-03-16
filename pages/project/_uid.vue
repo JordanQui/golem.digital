@@ -47,7 +47,7 @@ export default {
           // downscroll code
       } else {
           // upscroll code
-          this.setProjectHeigh()
+          // this.setProjectHeigh()
       }
       lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
     },
@@ -61,7 +61,6 @@ export default {
   mounted () {
     this.setProjectHeigh()
     this.$refs.caroussel.addEventListener('scroll', this.handleScroll);
-    // window.addEventListener('resize', this.handleResize);
   },
 }
 </script>
