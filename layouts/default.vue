@@ -1,5 +1,5 @@
 <template>
-  <div class="ac-layoutWrapper">
+  <div ref="mainwrapper" class="ac-layoutWrapper">
     <NavBar />
     <Nuxt />
     <NavGrid />
@@ -15,9 +15,22 @@ export default {
   components: {
     NavBar,
     NavGrid
+  },
+  methods: {
+    handleBackground() {
+      let s = document.documentElement.scrollTop / 3.2
+      this.$refs.mainwrapper.style.backgroundColor = `rgb(${s},${s},${s})`
+    }
+  },
+  mounted() {
+    console.log('mounted layout')
+    window.addEventListener('scroll', () => { this.handleBackground() } ) 
   }
 }
 </script>
 
 <style lang="scss" scoped>
+.ac-layoutWrapper {
+  background-color: rgb(0,0,0);
+}
 </style>

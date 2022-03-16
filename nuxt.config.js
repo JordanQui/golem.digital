@@ -18,6 +18,11 @@ export default {
     ]
   },
 
+  loading: {
+    color: 'gray',
+    height: '5px'
+  },
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     '../css/icomoon.scss',
@@ -78,5 +83,8 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    transpile: [
+      "gsap"
+    ]
   }
 }

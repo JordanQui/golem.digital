@@ -61,92 +61,12 @@ export default {
   mounted () {
     this.setProjectHeigh()
     this.$refs.caroussel.addEventListener('scroll', this.handleScroll);
-    this.$refs.caroussel.addEventListener('resize', this.handleResize);
+    window.addEventListener('resize', this.handleResize);
   },
 }
 </script>
 
-<style lang="scss" scoped>
-@import '@/css/main.scss';
-
-.ac-project {
-  background: black;
-  height: 100%;
-  overflow: hidden;
-
-  h2 {
-    color: white;
-    font-size: 24px;
-    padding: 10px 3%;
-    font-style: italic;
-    font-weight: 800;
-  }
-
-  &_caroussel {
-    width: 100%;
-    margin: auto;
-    height: 94%;
-
-    &-wrapper {
-      position: relative;
-      width: 100vw;
-      height: 100%;
-      display: flex;
-      overflow-x: scroll;
-      scroll-snap-type: x mandatory;
-
-      &::-webkit-scrollbar {
-        display: none;
-      }
-
-      img, video {
-        object-fit: contain;
-        height: 100%;
-        margin: auto;
-        pointer-events: none;
-      }
-    }
-
-    &-item {
-      scroll-snap-align: center;
-      flex-shrink: 0;
-      height: 100%;
-      width: 100%;
-      padding: 0 8% 100px;
-      margin: auto;
-    }
-  }
-
-  &_pagination {
-    display: none;
-  }
-}
-
-@include media(m) {
-  .ac-project {
-    h2 {
-      font-size: 38px;
-    }
-
-    &_caroussel-pagination {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      pointer-events: none;
-
-      &-left,
-      &-right {
-        pointer-events: all;
-        width: 10%;
-        height: 100%;
-      }
-    }
-  }
-}
+<style lang="scss">
+@import '@/css/project.scss';
 </style>
 
