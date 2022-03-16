@@ -28,9 +28,9 @@ export default {
       backgroundColor: '#FFFF',
       scrollTrigger: {
         trigger: ".ac-navgrid",
-        start: "-500px top",
-        end: "center 550px",
-        scrub: true,
+        start: `-${window.innerHeight / 3} top`,
+        end: `center ${window.innerHeight / 3}`,
+        scrub: true
       }
     })
   }
