@@ -20,7 +20,7 @@
   &_caroussel {
     width: 100%;
     margin: auto;
-    height: 94%;
+    height: 100%;
 
     &-wrapper {
       position: relative;
@@ -47,7 +47,7 @@
       flex-shrink: 0;
       height: 100%;
       width: 100%;
-      padding: 0 8% 100px;
+      padding: 0 8%;
       margin: auto;
     }
   }
@@ -60,8 +60,15 @@
 @include media(m) {
   .ac-project {
     h2 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: rotate(-90deg) translateX(-100%);
+      transform-origin: top left;
       font-size: 38px;
       height: 80px;
+      z-index: 10;
+      mix-blend-mode: difference;
     }
 
     &_caroussel-pagination {

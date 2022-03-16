@@ -61,6 +61,8 @@ export default {
     transform: translateX(-15vw);
     overflow: hidden;
     width: 300%;
+    // color: white;
+    // mix-blend-mode: difference;
 
     span {
       white-space: nowrap;
@@ -149,7 +151,7 @@ export default {
     grid-template-columns: repeat(3, 1fr);
   }
   .ac-navgrid_grid-itemWrapper img {
-    height: 100%;
+    height: auto;
   }
   .ac-navgrid_bandeau {
     position: absolute;
