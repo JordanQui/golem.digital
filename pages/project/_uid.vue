@@ -5,7 +5,7 @@
       <div ref="caroussel" class="ac-project_caroussel-wrapper">
         <div v-for="slide in document.data.caroussel" :key="slide.id" class="ac-project_caroussel-item">
           <img v-if="slide.image01.url" :src="slide.image01.url" alt="">
-          <video autoplay muted loop v-else-if="slide.video.url" :src="slide.video.url"></video>
+          <video autoplay controls="false" muted loop v-else-if="slide.video.url" :src="slide.video.url"></video>
         </div>
       </div>
       <div class="ac-project_caroussel-pagination">
