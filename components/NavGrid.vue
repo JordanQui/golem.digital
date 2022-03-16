@@ -149,7 +149,7 @@ export default {
     grid-template-columns: repeat(3, 1fr);
   }
   .ac-navgrid_grid-itemWrapper img {
-    height: auto;
+    height: 100%;
   }
   .ac-navgrid_bandeau {
     position: absolute;

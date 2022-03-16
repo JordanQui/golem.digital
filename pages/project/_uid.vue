@@ -93,6 +93,7 @@ export default {
         object-fit: contain;
         height: 100%;
         margin: auto;
+        pointer-events: none;
       }
     }
 
