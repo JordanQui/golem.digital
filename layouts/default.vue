@@ -27,10 +27,10 @@ export default {
    gsap.to(".ac-layoutWrapper", {
       backgroundColor: '#FFFF',
       scrollTrigger: {
-        trigger: ".ac-navgrid",
-        start: `-${window.innerHeight / 3} top`,
-        end: `top top`,
-        scrub: true,
+        trigger: ".ac-project",
+        start: `top top`,
+        end: `bottom top`,
+        scrub: true
       }
     })
   }
