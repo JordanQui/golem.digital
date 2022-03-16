@@ -17,6 +17,8 @@
 </template>
 
 <script>
+var lastScrollTop = 0;
+
 export default {
   name: 'Project',
   layout: 'default',
@@ -40,6 +42,14 @@ export default {
     },
     handleScroll(e) {
       console.log('scrolled', e.target)
+      var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
+      if (st > lastScrollTop){
+          // downscroll code
+      } else {
+          // upscroll code
+          this.setProjectHeigh()
+      }
+      lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
     },
     handleResize() {
       this.setProjectHeigh()
