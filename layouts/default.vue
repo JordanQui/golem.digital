@@ -19,7 +19,8 @@ export default {
   methods: {
     handleBackground() {
       let s = document.documentElement.scrollTop / 3.2
-      this.$refs.mainwrapper.style.backgroundColor = `rgb(${s},${s},${s})`
+      console.log(s)
+      this.$refs.mainwrapper.style.backgroundColor = `rgba(${s},${s},${s})`
     }
   },
   mounted() {
@@ -31,6 +32,8 @@ export default {
 
 <style lang="scss" scoped>
 .ac-layoutWrapper {
+  will-change: auto;
   background-color: rgb(0,0,0);
+  transition: background-color .2s ease-in;
 }
 </style>
