@@ -18,7 +18,7 @@ export default {
   },
   methods: {
     handleBackground() {
-      let s = document.documentElement.scrollTop / 3.2
+      let s = document.documentElement.scrollTop / 2.99
       this.$refs.mainwrapper.style.backgroundColor = `rgba(${s},${s},${s})`
     }
   },
