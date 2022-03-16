@@ -1,17 +1,24 @@
 <template>
-  <div class="ac-navigation" :class="{'black': this.$route.name !== 'index'}">
+  <div class="ac-navigation">
     <ul class="ac-navigation-wrapper">
       <li v-if="this.$route.name === 'index'" class="ac-navigation-item inactive"><span class="icon icon-info"></span></li>
       <li class="ac-navigation-item"><span class="icon icon-mail"></span></li>
       <li class="ac-navigation-item"><span class="icon icon-info-home"></span></li>
       <li v-if="this.$route.name !== 'index'" class="ac-navigation-item"><span class="icon icon-info"></span></li>
     </ul>
+    <!-- <span @click="scrollDown" class="ac-navigation-grid">grid</span> -->
   </div>
 </template>
 
 <script>
 export default {
   name: 'NavBar',
+  methods: {
+    scrollDown() {
+      console.log('clicked', document.body)
+      // document.body.offsetTop = 1000
+    }
+  }
 }
 </script>
 
@@ -23,9 +30,17 @@ export default {
   bottom: 0;
   right: 0;
   width: 100%;
-  background: white;
   padding: 10px;
   z-index: 1;
+  mix-blend-mode: difference;
+
+  &-grid {
+    position: fixed;
+    top: 0;
+    right: 0;
+    color: white;
+    cursor: pointer;
+  }
 
   &.black {
     background: transparent;
@@ -64,7 +79,7 @@ export default {
 
   .icon {
     font-size: 36px;
-    color: black;
+    color: white;
     position: relative;
     cursor: pointer;
     transition: color .3s ease-in;

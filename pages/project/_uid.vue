@@ -44,7 +44,8 @@ export default {
   }
 
   &_caroussel {
-    width: 100%;
+    width: 84%;
+    margin: auto;
     height: 94%;
 
     &-wrapper {
@@ -69,7 +70,7 @@ export default {
       scroll-snap-align: center;
       flex-shrink: 0;
       height: 100%;
-      width: 100vw;
+      width: 84vw;
     }
   }
 }
