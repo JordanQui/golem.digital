@@ -1,28 +1,57 @@
 <template>
-  <section class="ac-pageWrapper ac-project">
+  <section ref="projectwrapper" class="ac-pageWrapper ac-project">
     <h2>{{ document.data.title[0].text }}</h2>
     <div class="ac-project_caroussel">
-      <div class="ac-project_caroussel-wrapper">
+      <div ref="caroussel" class="ac-project_caroussel-wrapper">
         <div v-for="slide in document.data.caroussel" :key="slide.id" class="ac-project_caroussel-item">
-          <img :src="slide.image01.url" alt="">
-          <!-- {{ slide.image01.url }} -->
+          <img v-if="slide.image01.url" :src="slide.image01.url" alt="">
+          <video autoplay muted loop v-else-if="slide.video.url" :src="slide.video.url"></video>
         </div>
       </div>
+      <div class="ac-project_caroussel-pagination">
+          <span @click="prevSlide()" class="ac-project_caroussel-pagination-left"></span>
+          <span @click="nextSlide()" class="ac-project_caroussel-pagination-right"></span>
+        </div>
     </div>
   </section>
 </template>
 
 <script>
 export default {
-  name: 'Home',
+  name: 'Project',
   layout: 'default',
   async asyncData({ $prismic, params, error }) {
     const document = await $prismic.api.getByUID('project', params.uid)
+    console.log('data caroussel', document.data.caroussel)
     if (document) {
       return { document }
     } else {
       error({ statusCode: 404, message: 'Page not found' })
     }
+  },
+  methods: {
+    prevSlide() {
+      console.log('prev', this.$refs.caroussel)
+      this.$refs.caroussel.scrollLeft = '0px'
+    },
+    nextSlide() {
+      console.log('next', this.$refs.caroussel)
+      this.$refs.caroussel.scrollLeft = '1500px'
+    },
+    handleScroll(e) {
+      console.log('scrolled', e.target)
+    },
+    handleResize() {
+      this.setProjectHeigh()
+    },
+    setProjectHeigh() {
+      this.$refs.projectwrapper.style.height = window.innerHeight + 'px'  
+    }
+  },
+  mounted () {
+    this.setProjectHeigh()
+    this.$refs.caroussel.addEventListener('scroll', this.handleScroll);
+    this.$refs.caroussel.addEventListener('resize', this.handleResize);
   },
 }
 </script>
@@ -32,7 +61,7 @@ export default {
 
 .ac-project {
   background: black;
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
 
   h2 {
@@ -44,12 +73,13 @@ export default {
   }
 
   &_caroussel {
-    width: 84%;
+    width: 100%;
     margin: auto;
     height: 94%;
 
     &-wrapper {
-      width: 100%;
+      position: relative;
+      width: 100vw;
       height: 100%;
       display: flex;
       overflow-x: scroll;
@@ -59,7 +89,7 @@ export default {
         display: none;
       }
 
-      img {
+      img, video {
         object-fit: contain;
         height: 100%;
         margin: auto;
@@ -70,8 +100,14 @@ export default {
       scroll-snap-align: center;
       flex-shrink: 0;
       height: 100%;
-      width: 84vw;
+      width: 100%;
+      padding: 0 8% 100px;
+      margin: auto;
     }
+  }
+
+  &_pagination {
+    display: none;
   }
 }
 
@@ -79,6 +115,25 @@ export default {
   .ac-project {
     h2 {
       font-size: 38px;
+    }
+
+    &_caroussel-pagination {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      pointer-events: none;
+
+      &-left,
+      &-right {
+        pointer-events: all;
+        width: 10%;
+        height: 100%;
+      }
     }
   }
 }

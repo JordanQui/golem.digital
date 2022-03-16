@@ -46,8 +46,8 @@ export default {
         return '/not-found';
       }
     
-      if (doc.type === 'home') {
-        return '/';
+      if (doc.uid === 'home') {
+        return '/project/home';
       }
     
       if (doc.type === 'project') {
