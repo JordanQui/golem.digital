@@ -19,7 +19,6 @@ export default {
   name: 'Home',
   async asyncData({ $prismic, params, error }) {
     const document = await $prismic.api.getByUID('project', 'home')
-    console.log('home doccc', document.data.caroussel[0])
     if (document) {
       return { document }
     } else {
