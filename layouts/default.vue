@@ -41,7 +41,6 @@ export default {
           start: `top top`,
           end: `${window.innerHeight} top`,
           scrub: true,
-          markers: true,
         }
       })
     }
