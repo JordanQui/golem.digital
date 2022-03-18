@@ -37,10 +37,11 @@ export default {
       this.st = gsap.to(".ac-layoutBackground", {
         opacity: 0,
         scrollTrigger: {
-          trigger: ".ac-project",
+          trigger: ".ac-layoutBackground",
           start: `top top`,
-          end: `bottom top`,
+          end: `${window.innerHeight} top`,
           scrub: true,
+          markers: true,
         }
       })
     }
@@ -53,8 +54,6 @@ export default {
 
 <style lang="scss" scoped>
 .ac-layoutWrapper {
-  // will-change: background-color;
-  // background-color: #000;
   position: relative;
   transition: background-color .2s ease-in;
 
