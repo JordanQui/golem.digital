@@ -5,12 +5,13 @@
     <div class="ac-project_caroussel">
       <div ref="caroussel" class="ac-project_caroussel-wrapper">
         <div v-for="slide in document.data.caroussel" :key="slide.id" class="ac-project_caroussel-item">
-          <img v-if="slide.image01.url" :src="slide.image01.url" alt="">
+          <img v-if="slide.image01.url" :src="slide.image01.url" :alt="slide.image01.alt" v-lazy-load>
           <video 
             v-else-if="slide.video.url" 
             webkit-playsinline playsinline autoplay controls="false" muted loop 
             :src="slide.video.url"
             style="pointer-events: none"
+            v-lazy-load
           ></video>
         </div>
       </div>

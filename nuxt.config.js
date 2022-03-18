@@ -67,7 +67,7 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     ['nuxt-lazy-load', {
-      directiveOnly: false,
+      directiveOnly: true,
     }],
     [
       'nuxt-mq',
