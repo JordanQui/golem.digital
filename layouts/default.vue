@@ -27,16 +27,26 @@ export default {
     NavGrid,
     About,
   },
+  watch:{
+    $route (to, from){
+        this.show = false;
+    }
+  },
+  methods: {
+    createScrollTrigger() {
+      gsap.to(".ac-layoutBackground", {
+        opacity: 0,
+        scrollTrigger: {
+          trigger: ".ac-project",
+          start: `top top`,
+          end: `bottom top`,
+          scrub: true
+        }
+      })
+    }
+  }, 
   mounted() {
-   gsap.to(".ac-layoutBackground", {
-      opacity: 0,
-      scrollTrigger: {
-        trigger: ".ac-project",
-        start: `top top`,
-        end: `bottom top`,
-        scrub: true
-      }
-    })
+    this.createScrollTrigger()
   }
 }
 </script>
