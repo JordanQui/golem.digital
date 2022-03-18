@@ -49,4 +49,11 @@ export default {
 <style lang="scss" scoped>
 @import '@/css/main.scss';
 
+.ac-about {
+  &_content {
+    padding: 10%;
+    font-size: 24px;
+  }
+}
+
 </style>
