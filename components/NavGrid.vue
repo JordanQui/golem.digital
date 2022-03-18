@@ -34,7 +34,6 @@ export default {
     ])
   },
   mounted() {
-    console.log('nav grid document', this.document)
     this.bannertitle = 'golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem'
   }
 }
@@ -44,6 +43,7 @@ export default {
 @import '@/css/main.scss';
 
 .ac-navgrid {
+  position: relative;
   
   &_wrapper {
     position: relative;
@@ -61,8 +61,6 @@ export default {
     transform: translateX(-15vw);
     overflow: hidden;
     width: 300%;
-    // color: white;
-    // mix-blend-mode: difference;
 
     span {
       white-space: nowrap;
@@ -116,7 +114,9 @@ export default {
 
       img {
         object-fit: cover;
+        object-position: center;
         height: 100%;
+        width: 100%;
       }
     }
   }
@@ -151,7 +151,7 @@ export default {
     grid-template-columns: repeat(3, 1fr);
   }
   .ac-navgrid_grid-itemWrapper img {
-    height: auto;
+    // height: 100%;
   }
   .ac-navgrid_bandeau {
     position: absolute;

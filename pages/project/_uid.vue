@@ -1,6 +1,7 @@
 <template>
   <section ref="projectwrapper" class="ac-pageWrapper ac-project">
     <h2>{{ document.data.title[0].text }}</h2>
+    <span @click="scrollToGrid" class="ac-project_toGrid icon-menu"></span>
     <div class="ac-project_caroussel">
       <div ref="caroussel" class="ac-project_caroussel-wrapper">
         <div v-for="slide in document.data.caroussel" :key="slide.id" class="ac-project_caroussel-item">
@@ -27,7 +28,7 @@ export default {
   layout: 'default',
   async asyncData({ $prismic, params, error }) {
     const document = await $prismic.api.getByUID('project', params.uid)
-    console.log('data caroussel', document.data.caroussel)
+
     if (document) {
       return { document }
     } else {
@@ -51,6 +52,9 @@ export default {
     },
     setProjectHeigh() {
       this.$refs.projectwrapper.style.height = window.innerHeight + 'px'  
+    },
+    scrollToGrid() {
+      document.documentElement.scrollTop = window.innerHeight
     }
   },
   mounted () {

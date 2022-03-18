@@ -26,8 +26,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-info:before {
+.icon-menu:before {
   content: "\e900";
+}
+.icon-info:before {
+  content: "\e904";
 }
 .icon-info-home:before {
   content: "\e901";

@@ -1,10 +1,9 @@
 <template>
   <div class="ac-navigation">
     <ul class="ac-navigation-wrapper">
-      <li v-if="this.$route.name === 'index'" class="ac-navigation-item inactive"><span class="icon icon-info"></span></li>
       <li class="ac-navigation-item"><span class="icon icon-mail"></span></li>
-      <li class="ac-navigation-item"><span class="icon icon-info-home"></span></li>
-      <li v-if="this.$route.name !== 'index'" class="ac-navigation-item"><span class="icon icon-info"></span></li>
+      <li @click="$nuxt.$emit('open-modale-about')" class="ac-navigation-item"><span class="icon icon-info-home"></span></li>
+      <li class="ac-navigation-item"><span class="icon icon-info"></span></li>
     </ul>
     <!-- <span @click="scrollDown" class="ac-navigation-grid">grid</span> -->
   </div>
@@ -16,7 +15,6 @@ export default {
   methods: {
     scrollDown() {
       console.log('clicked', document.body)
-      // document.body.offsetTop = 1000
     }
   }
 }
@@ -31,7 +29,7 @@ export default {
   right: 0;
   width: 100%;
   padding: 10px;
-  z-index: 1;
+  z-index: 20 !important;
   mix-blend-mode: difference;
 
   &-grid {
