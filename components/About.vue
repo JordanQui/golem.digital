@@ -52,7 +52,15 @@ export default {
 .ac-about {
   &_content {
     padding: 10%;
-    font-size: 24px;
+    font-size: 18px;
+  }
+}
+
+@include media(l) {
+  .ac-about {
+    &_content {
+      font-size: 24px;
+    }
   }
 }
 
