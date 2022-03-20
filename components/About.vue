@@ -32,7 +32,9 @@ export default {
     font-size: 18px;
   }
   &_container {
-    margin: 50px;
+    padding: 50px;
+    overflow-y: scroll;
+    height: 47vh;
   }
 }
 

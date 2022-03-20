@@ -114,7 +114,6 @@ export default {
 .ac-info {
   &_wrapper {
     display: flex;
-    padding: 0 10px;
     max-height: 50vh;
   }
   &_description {
@@ -124,7 +123,7 @@ export default {
     -webkit-overflow-scrolling: touch;
   }
   &_meta {
-    padding-left: 50px;
+    padding-left: 10px;
     overflow-y: scroll;
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
@@ -142,13 +141,24 @@ export default {
   }
 }
 
+@include media(m) {
+  .ac-info {
+    &_wrapper {
+      padding: 0 10px;
+    }
+    &_meta {
+      padding-left: 25px;
+    }
+  }
+}
+
 @include media(l) {
   .ac-info {
     &_wrapper {
       padding: 0 80px;
     }
     &_meta {
-      padding-left: 25px;
+      padding-left: 50px;
     }
     &-item {
       &-label {

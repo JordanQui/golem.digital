@@ -82,18 +82,21 @@ body {
 
 
 .ac-info_meta::-webkit-scrollbar,
-.ac-info_description::-webkit-scrollbar {
+.ac-info_description::-webkit-scrollbar,
+.ac-about_container::-webkit-scrollbar {
   width: 10px;
   height: 10px;
 }
 .ac-info_meta::-webkit-scrollbar-track,
-.ac-info_description::-webkit-scrollbar-track {
+.ac-info_description::-webkit-scrollbar-track,
+.ac-about_container::-webkit-scrollbar-track {
   border-radius: 10px;
   background: black;
   // border: 1px solid white;
 }
 .ac-info_meta::-webkit-scrollbar-thumb,
-.ac-info_description::-webkit-scrollbar-thumb {
+.ac-info_description::-webkit-scrollbar-thumb,
+.ac-about_container::-webkit-scrollbar-thumb {
   border-radius: 10px;
   background: white;
   border: 1px solid black;

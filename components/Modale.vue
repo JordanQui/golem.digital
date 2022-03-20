@@ -76,7 +76,7 @@ export default {
   }
 
   &_wrapper {
-    width: 90%;
+    width: 95%;
     padding: 10px;
     max-height: 64vh;
     background-color: black;
