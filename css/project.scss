@@ -62,7 +62,7 @@
 
   &_toGrid {
     color: white;
-    font-size: 50px;
+    font-size: 40px;
     position: absolute;
     top: 0;
     right: 0;
@@ -110,6 +110,7 @@
     }
 
     &_toGrid {
+      font-size: 50px;
       bottom: 0;
       top: initial;
     }

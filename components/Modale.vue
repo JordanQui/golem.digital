@@ -60,6 +60,7 @@ export default {
   width: 100%;
   visibility: hidden;
   opacity: 0;
+  background: rgba(0,0,0,0.7);
   transition: opacity .3s ease-in,
     visibility .0s ease-in;
 
@@ -100,6 +101,7 @@ export default {
   }
 
   &_lang {
+    cursor: pointer;
     text-align: right;
     font-weight: 400;
     font-size: 24px;

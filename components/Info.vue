@@ -124,7 +124,7 @@ export default {
     -webkit-overflow-scrolling: touch;
   }
   &_meta {
-    padding-left: 30px;
+    padding-left: 50px;
     overflow-y: scroll;
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
@@ -142,10 +142,13 @@ export default {
   }
 }
 
-@include media(m) {
+@include media(l) {
   .ac-info {
     &_wrapper {
-      padding: 0 50px;
+      padding: 0 80px;
+    }
+    &_meta {
+      padding-left: 25px;
     }
     &-item {
       &-label {

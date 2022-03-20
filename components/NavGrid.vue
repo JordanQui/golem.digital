@@ -85,9 +85,11 @@ export default {
       }
 
       &-legend {
+        line-height: 43px;
+        padding: 5px 0;
         transition: opacity .3s ease-in;
         opacity: 0;
-        font-size: 22px;
+        font-size: 30px;
         font-weight: 800;
         font-style: italic;
         color: white;
@@ -160,6 +162,9 @@ export default {
     width: 130%;
     left: -42%;
     top: 50%;
+  }
+  .ac-navgrid_grid-item-legend {
+    font-size: 38px;
   }
 }
 </style>

@@ -1,6 +1,7 @@
 <template>
   <div ref="mainwrapper" class="ac-layoutWrapper">
     <span class="ac-layoutBackground"></span>
+    <LoadSpinner v-if="showHideSpinner" />
     <NavBar />
     <Nuxt />
     <NavGrid />
@@ -19,6 +20,7 @@ import Modale from '../components/Modale.vue'
 import About from '../components/About.vue'
 import Info from '../components/Info.vue'
 import Mail from '../components/Mail.vue'
+import LoadSpinner from '../components/LoadSpinner.vue'
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -35,11 +37,13 @@ export default {
     Modale,
     About,
     Info,
-    Mail
+    Mail,
+    LoadSpinner
   },
   data() {
     return {
       st: {},
+      showHideSpinner: true
     }
   },
   methods: {
@@ -56,7 +60,16 @@ export default {
     }
   }, 
   mounted() {
+    this.showHideSpinner = false;
     this.createScrollTrigger()
+  },
+  beforeCreate() {
+    this.showHideSpinner = true;
+  },
+  data() {
+    return {
+      showHideSpinner: true
+    };
   }
 }
 </script>
