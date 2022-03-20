@@ -78,7 +78,7 @@ export default {
   &_wrapper {
     width: 95%;
     padding: 10px;
-    max-height: 64vh;
+    max-height: 75vh;
     background-color: black;
     color: white;
     position: absolute;
@@ -95,7 +95,7 @@ export default {
   &_close {
     font-size: 40px;
     text-align: right;
-    padding: 50px;
+    padding: 20px;
     position: absolute;
     right: 0;
   }
@@ -129,6 +129,17 @@ export default {
   .ac-modale {
     &_wrapper {
       width: 80%;
+    }
+  }
+}
+
+@include media (l) {
+  .ac-modale {
+    &_close {
+      padding: 50px;
+    }
+    &_wrapper {
+      max-height: 64vh;
     }
   }
 }
