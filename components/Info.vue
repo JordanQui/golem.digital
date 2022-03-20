@@ -103,7 +103,7 @@ export default {
     this.document = await this.$prismic.api.getByUID('project', this.uid)
   },
   created() {
-    this.uid = this.$route.params.uid
+    this.uid = this.$route.params.uid ? this.$route.params.uid : 'home'
   }
 }
 </script>

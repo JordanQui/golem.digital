@@ -3,7 +3,7 @@
     <ul class="ac-navigation-wrapper">
       <li @click="openModaleMail()" class="ac-navigation-item"><span class="icon icon-mail"></span></li>
       <li @click="openModaleAbout()" class="ac-navigation-item"><span class="icon icon-info-home"></span></li>
-      <li @click="openModaleInfo()" class="ac-navigation-item"><span class="icon icon-info"></span></li>
+      <li @click="openModaleInfo()" class="ac-navigation-item" :class="{ 'inactive': isHome }"><span class="icon icon-info"></span></li>
     </ul>
   </div>
 </template>
@@ -11,14 +11,21 @@
 <script>
 export default {
   name: 'NavBar',
+  computed: {
+    isHome() {
+      return this.$route.name === "index"
+    }
+  },
   methods: {
     openModaleAbout() {
       this.$store.commit('changeModale', 'about')
       $nuxt.$emit('open-modale')
     },
     openModaleInfo() {
-      this.$store.commit('changeModale', 'info')
-      $nuxt.$emit('open-modale')
+      if(!this.isHome) {
+        this.$store.commit('changeModale', 'info')
+        $nuxt.$emit('open-modale')
+      }
     },
     openModaleMail() {
       this.$store.commit('changeModale', 'mail')
