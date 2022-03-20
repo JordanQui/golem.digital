@@ -34,7 +34,7 @@ export default {
     ])
   },
   mounted() {
-    this.bannertitle = 'golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem'
+    this.bannertitle = 'golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem'
   }
 }
 </script>
@@ -52,17 +52,23 @@ export default {
   }
 
   &_bandeau {
+    position: relative;
+    height: 60px;
     font-size: 30px;
     font-family: "Raleway";
     font-weight: 800;
     font-style: italic;
     text-transform: uppercase;
     line-height: 60px;
-    transform: translateX(-15vw);
+    // transform: translateX(-15vw);
     overflow: hidden;
-    width: 300%;
+    width: 100%;
 
     span {
+      position: absolute;
+      top: 0;
+      // left: -1500px;
+      animation: defile 10s infinite alternate;
       white-space: nowrap;
       padding-right: 10px;
     }
@@ -123,6 +129,13 @@ export default {
     }
   }
 }
+
+@keyframes defile {
+  0% { left: -1500px; }
+  100% { left: 1500px; }
+}
+
+
 
 @include media(xs) {
   .ac-navgrid_grid {

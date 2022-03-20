@@ -19,7 +19,6 @@
   position: absolute;
   left: 50%;
   top: 50%;
-
   transform: translate(-50%, -50%);
 }
 
@@ -34,11 +33,6 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-/* Safari */
-@-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
 }
 
 @keyframes spin {

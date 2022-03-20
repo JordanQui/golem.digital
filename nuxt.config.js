@@ -19,7 +19,7 @@ export default {
   },
 
   loading: {
-    color: 'gray',
+    color: 'white',
     height: '5px'
   },
 

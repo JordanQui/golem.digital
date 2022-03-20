@@ -95,7 +95,7 @@ export default {
   &_close {
     font-size: 40px;
     text-align: right;
-    padding: 20px;
+    padding: 15px;
     position: absolute;
     right: 0;
   }

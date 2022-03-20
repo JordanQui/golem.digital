@@ -96,6 +96,9 @@
 
 @include media(l) {
   .ac-project {
+    &_caroussel {
+      height: 100%;
+    }
     h2 {
       font-size: 44px;
       position: absolute;
