@@ -175,9 +175,17 @@ export default {
     width: 130%;
     left: -42%;
     top: 50%;
+
+    span {
+      animation: defile 30s infinite alternate;
+    }
   }
   .ac-navgrid_grid-item-legend {
     font-size: 38px;
+  }
+  @keyframes defile {
+    0% { left: -1500px; }
+    100% { left: 1500px; }
   }
 }
 </style>
