@@ -4,14 +4,21 @@
     <NavBar />
     <Nuxt />
     <NavGrid />
-    <About />
+    <Modale>
+      <About v-show="$store.state.modale === 'about'" />
+      <Info v-show="$store.state.modale === 'info'" />
+      <Mail v-show="$store.state.modale === 'mail'" />
+    </Modale>
   </div>
 </template>
 
 <script>
 import NavBar from '../components/NavBar.vue'
 import NavGrid from '../components/NavGrid.vue'
+import Modale from '../components/Modale.vue'
 import About from '../components/About.vue'
+import Info from '../components/Info.vue'
+import Mail from '../components/Mail.vue'
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -25,7 +32,10 @@ export default {
   components: {
     NavBar,
     NavGrid,
+    Modale,
     About,
+    Info,
+    Mail
   },
   data() {
     return {

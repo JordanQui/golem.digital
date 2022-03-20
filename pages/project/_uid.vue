@@ -60,7 +60,7 @@ export default {
   },
   mounted () {
     this.setProjectHeigh()
-    this.$refs.caroussel.addEventListener('scroll', this.handleScroll);
+    this.$refs.caroussel.addEventListener('scroll', this.handleScroll)
   },
 }
 </script>

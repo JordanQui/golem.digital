@@ -1,11 +1,10 @@
 <template>
   <div class="ac-navigation">
     <ul class="ac-navigation-wrapper">
-      <li class="ac-navigation-item"><span class="icon icon-mail"></span></li>
-      <li @click="$nuxt.$emit('open-modale-about')" class="ac-navigation-item"><span class="icon icon-info-home"></span></li>
-      <li class="ac-navigation-item"><span class="icon icon-info"></span></li>
+      <li @click="openModaleMail()" class="ac-navigation-item"><span class="icon icon-mail"></span></li>
+      <li @click="openModaleAbout()" class="ac-navigation-item"><span class="icon icon-info-home"></span></li>
+      <li @click="openModaleInfo()" class="ac-navigation-item"><span class="icon icon-info"></span></li>
     </ul>
-    <!-- <span @click="scrollDown" class="ac-navigation-grid">grid</span> -->
   </div>
 </template>
 
@@ -13,6 +12,18 @@
 export default {
   name: 'NavBar',
   methods: {
+    openModaleAbout() {
+      this.$store.commit('changeModale', 'about')
+      $nuxt.$emit('open-modale')
+    },
+    openModaleInfo() {
+      this.$store.commit('changeModale', 'info')
+      $nuxt.$emit('open-modale')
+    },
+    openModaleMail() {
+      this.$store.commit('changeModale', 'mail')
+      $nuxt.$emit('open-modale')
+    },
     scrollDown() {
       console.log('clicked', document.body)
     }
