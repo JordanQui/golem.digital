@@ -46,6 +46,7 @@ export default {
   
   prismic: {
     endpoint: 'https://arielclaudetcom.cdn.prismic.io/api/v2',
+    preview: false,
     modern: true,
     linkResolver: function(doc) {
       if (doc.isBroken) {

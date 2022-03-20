@@ -43,7 +43,6 @@ export default {
   },
   async fetch() {
     this.document = await this.$prismic.api.getSingle('contact')
-    console.log('data mail', this.document)
   },
 }
 </script>
