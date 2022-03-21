@@ -30,10 +30,6 @@ export default {
 .ac-about {
   &_content {
     font-size: 18px;
-
-    &-wrapper {
-      
-    }
   }
   &_container {
     padding: 0 50px;

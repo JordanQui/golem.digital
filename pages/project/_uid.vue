@@ -58,11 +58,11 @@ export default {
       this.setProjectHeigh()
     },
     setProjectHeigh() {
-      // if(this.$device.isMobile) {
-      //   this.$refs.projectwrapper.style.height = window.innerHeight + 'px'
-      // } else {
-      //   this.$refs.projectwrapper.style.height = '100vh'
-      // }
+      if(this.$device.isMobile) {
+        this.$refs.projectwrapper.style.height = window.innerHeight + 'px'
+      } else {
+        this.$refs.projectwrapper.style.height = '100vh'
+      }
       this.$refs.projectwrapper.style.height = '100vh'
     },
     scrollToGrid() {
