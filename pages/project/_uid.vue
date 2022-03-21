@@ -1,5 +1,5 @@
 <template>
-  <section ref="projectwrapper" class="ac-pageWrapper ac-project">
+  <section ref="projectwrapper" class="ac-pageWrapper ac-project" :style="{height: $route.name != 'index' ? '100vh' : '0px'}">
     <h2>{{ document.data.title[0].text }}</h2>
     <span @click="scrollToGrid" class="ac-project_toGrid icon-menu"></span>
     <div class="ac-project_caroussel">

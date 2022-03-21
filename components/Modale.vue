@@ -106,10 +106,11 @@ export default {
   }
 
   &_close {
+    position: absolute;
     font-size: 40px;
     text-align: right;
     padding: 15px;
-    position: absolute;
+    cursor: pointer;
     right: 0;
   }
 
