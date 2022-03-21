@@ -62,7 +62,7 @@ export default {
     }
   },
   mounted () {
-    this.setProjectHeigh()
+    // this.setProjectHeigh()
     this.$refs.caroussel.addEventListener('scroll', this.handleScroll)
   },
 }
