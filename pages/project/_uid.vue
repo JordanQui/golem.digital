@@ -14,7 +14,7 @@
             v-lazy-load
           ></video>
           <div v-else-if="slide.embed" class="ac-project_caroussel-item">
-            {{ slide.embed }}
+            {{ slide.embed.html }}
           </div>
         </div>
       </div>
