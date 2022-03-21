@@ -6,7 +6,7 @@
         <prismic-rich-text v-else-if="lang === 'EN'" :field="document.data.descriptionen" class="ac-info_content" />
       </article>
       <article class="ac-info_meta">
-        <div class="ac-info_meta-item">
+        <div v-if="document.data.programme.length" class="ac-info_meta-item">
           <div class="ac-info_meta-item-label">
             <span v-if="lang === 'FR'">programme</span>
             <span v-else-if="lang === 'EN'">program</span>
@@ -16,7 +16,7 @@
           </span>
         </div>
 
-        <div class="ac-info_meta-item">
+        <div v-if="document.data.client.length" class="ac-info_meta-item">
           <div class="ac-info_meta-item-label">
             <span>client</span>
           </div>
@@ -25,17 +25,17 @@
           </span>
         </div>
 
-        <div class="ac-info_meta-item">
+        <div v-if="document.data.lieu.length" class="ac-info_meta-item">
           <div class="ac-info_meta-item-label">
             <span v-if="lang === 'FR'">lieu</span>
-            <span v-else-if="lang === 'EN'">place</span>
+            <span v-else-if="lang === 'EN'">location</span>
           </div>
           <span class="ac-info_meta-item-text">
             <prismic-rich-text :field="document.data.lieu"  />
           </span>
         </div>
 
-        <div class="ac-info_meta-item">
+        <div v-if="document.data.annee.length" class="ac-info_meta-item">
           <div class="ac-info_meta-item-label">
             <span v-if="lang === 'FR'">année</span>
             <span v-else-if="lang === 'EN'">year</span>
@@ -45,30 +45,20 @@
           </span>
         </div>
 
-        <div class="ac-info_meta-item">
+        <div v-if="document.data.maitrise.length" class="ac-info_meta-item">
           <div class="ac-info_meta-item-label">
-            <span v-if="lang === 'FR'">lieu</span>
-            <span v-else-if="lang === 'EN'">place</span>
-          </div>
-          <span class="ac-info_meta-item-text">
-            <prismic-rich-text :field="document.data.lieu"  />
-          </span>
-        </div>
-
-        <div class="ac-info_meta-item">
-          <div class="ac-info_meta-item-label">
-            <span v-if="lang === 'FR'">maitre d'oeuvre</span>
-            <span v-else-if="lang === 'EN'">project manager</span>
+            <span v-if="lang === 'FR'">maitrise d'oeuvre</span>
+            <span v-else-if="lang === 'EN'">design team</span>
           </div>
           <span class="ac-info_meta-item-text">
             <prismic-rich-text :field="document.data.maitrise"  />
           </span>
         </div>
 
-        <div class="ac-info_meta-item">
+        <div v-if="document.data.collaborateur.length" class="ac-info_meta-item">
           <div class="ac-info_meta-item-label">
-            <span v-if="lang === 'FR'">collaborateur</span>
-            <span v-else-if="lang === 'EN'">collaborater</span>
+            <span v-if="lang === 'FR'">collaborateurs</span>
+            <span v-else-if="lang === 'EN'">collaborators</span>
           </div>
           <span class="ac-info_meta-item-text">
             <prismic-rich-text :field="document.data.collaborateur"  />
@@ -101,6 +91,7 @@ export default {
   },
   async fetch() {
     this.document = await this.$prismic.api.getByUID('project', this.uid)
+    console.log('info data', this.document.data)
   },
   created() {
     this.uid = this.$route.params.uid ? this.$route.params.uid : 'home'

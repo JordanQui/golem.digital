@@ -2,7 +2,7 @@
   <div class="ac-navgrid">
     <div class="ac-navgrid_wrapper">
       <section class="ac-navgrid_bandeau">
-        <span>{{ this.bannertitle }}</span>
+        <span v-for="n in 30" :key="n.id">golem</span>
       </section>
       <section class="ac-navgrid_grid">
         <div v-for="project in document.results" :key="project.id" class="ac-navgrid_grid-item">
@@ -24,7 +24,6 @@ export default {
   data() {
     return {
       document: {},
-      bannertitle: '',
     }
   },
   async fetch() {
@@ -33,9 +32,6 @@ export default {
       this.$prismic.predicates.not('my.project.uid', 'home')
     ])
   },
-  mounted() {
-    this.bannertitle = 'golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem golem'
-  }
 }
 </script>
 
@@ -64,11 +60,12 @@ export default {
     width: 100%;
 
     span {
-      position: absolute;
-      top: 0;
-      animation: defile 10s infinite alternate;
-      white-space: nowrap;
+      // position: absolute;
+      // top: 0;
+      // animation: defile 10s infinite alternate;
+      // white-space: nowrap;
       padding-right: 10px;
+      float: left;
     }
   }
 
@@ -76,7 +73,7 @@ export default {
     display: grid;
     grid-gap: 5px;
     grid-template-columns: repeat(2, 1fr);
-    margin-bottom: 120px;
+    margin-bottom: 80px;
 
     &-item {
       position: relative;
@@ -151,6 +148,9 @@ export default {
 }
 
 @include media (m) {
+  .ac-navgrid_wrapper {
+    padding: 0 1%;
+  }
   .ac-navgrid_grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -161,15 +161,12 @@ export default {
     padding: 50px 8%;
   }
   .ac-navgrid_grid {
-    grid-gap: 7%;
+    grid-gap: 50px;
     grid-template-columns: repeat(3, 1fr);
   }
   .ac-navgrid_grid-item-legend {
     font-size: 30px;
     line-height: 43px;
-  }
-  .ac-navgrid_grid-itemWrapper img {
-    // height: 100%;
   }
   .ac-navgrid_bandeau {
     position: absolute;
