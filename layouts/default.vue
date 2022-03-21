@@ -83,11 +83,6 @@ export default {
   },
   beforeCreate() {
     this.showHideSpinner = true;
-  },
-  data() {
-    return {
-      showHideSpinner: true
-    };
   }
 }
 </script>
