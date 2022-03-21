@@ -1,6 +1,6 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
-  target: 'server',
+  target: 'universal',
   head: {
     title: 'Ariel Claudet',
     htmlAttrs: {
@@ -92,9 +92,5 @@ export default {
     transpile: [
       "gsap"
     ]
-  },
-
-  server: {     
-    host: '0.0.0.0', // default: localhost   
-  }, 
+  }
 }

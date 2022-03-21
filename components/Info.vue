@@ -103,7 +103,7 @@ export default {
 
 .ac-info {
   height: 52vh;
-  font-size: 14px;
+  font-size: 15px;
 
   &_wrapper {
     display: flex;
@@ -143,6 +143,7 @@ export default {
 
 @include media(m) {
   .ac-info {
+    font-size: 17px;
     &_wrapper {
       padding: 0 10px;
     }

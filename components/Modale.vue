@@ -142,13 +142,16 @@ export default {
 @include media (m) {
   .ac-modale {
     &_wrapper {
-      width: 59%;
+      width: 70%;
     }
   }
 }
 
 @include media (l) {
   .ac-modale {
+    &_wrapper {
+      width: 59%;
+    }
     &_close {
       padding: 50px;
       right: 8%;
