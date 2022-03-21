@@ -1,7 +1,7 @@
 <template>
   <div ref="mainwrapper" class="ac-layoutWrapper">
     <span ref="bg" v-if="isBgVisible" class="ac-layoutBackground"></span>
-    <!-- <LoadSpinner v-if="showHideSpinner && !$device.isMobile" /> -->
+    <LoadSpinner v-if="showHideSpinner" />
     <NavBar />
     <Nuxt />
     <NavGrid />
