@@ -1,6 +1,6 @@
 <template>
   <div class="ac-about_container">
-    <prismic-rich-text v-if="lang === 'FR'" :field="document.data.content" class="ac-about_content" />
+    <prismic-rich-text v-if="lang === 'FR'" :field="document.data.contentfr" class="ac-about_content" />
     <prismic-rich-text v-else-if="lang === 'EN'" :field="document.data.contenten" class="ac-about_content" />
   </div>
 </template>

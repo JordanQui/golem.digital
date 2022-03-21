@@ -2,7 +2,7 @@
   <section class="ac-info">
     <div class="ac-info_wrapper">
       <article class="ac-info_description">
-        <prismic-rich-text v-if="lang === 'FR'" :field="document.data.description" class="ac-info_content" />
+        <prismic-rich-text v-if="lang === 'FR'" :field="document.data.descriptionfr" class="ac-info_content" />
         <prismic-rich-text v-else-if="lang === 'EN'" :field="document.data.descriptionen" class="ac-info_content" />
       </article>
       <article class="ac-info_meta">
@@ -118,7 +118,7 @@ export default {
   }
   &_description {
     width: 80%;
-    padding-right: 35px;
+    padding-right: 20px;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
   }
@@ -154,6 +154,9 @@ export default {
 
 @include media(l) {
   .ac-info {
+    &_description {
+      padding-right: 35px;
+    }
     &_wrapper {
       padding: 0 80px;
     }

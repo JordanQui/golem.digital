@@ -60,14 +60,12 @@ export default {
     font-style: italic;
     text-transform: uppercase;
     line-height: 60px;
-    // transform: translateX(-15vw);
     overflow: hidden;
     width: 100%;
 
     span {
       position: absolute;
       top: 0;
-      // left: -1500px;
       animation: defile 10s infinite alternate;
       white-space: nowrap;
       padding-right: 10px;
@@ -76,9 +74,9 @@ export default {
 
   &_grid {
     display: grid;
+    grid-gap: 5px;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 5%;
-    margin-bottom: 320px;
+    margin-bottom: 120px;
 
     &-item {
       position: relative;
@@ -91,11 +89,11 @@ export default {
       }
 
       &-legend {
-        line-height: 43px;
+        line-height: 33px;
         padding: 5px 0;
         transition: opacity .3s ease-in;
         opacity: 0;
-        font-size: 30px;
+        font-size: 20px;
         font-weight: 800;
         font-style: italic;
         color: white;
@@ -163,7 +161,12 @@ export default {
     padding: 50px 8%;
   }
   .ac-navgrid_grid {
+    grid-gap: 7%;
     grid-template-columns: repeat(3, 1fr);
+  }
+  .ac-navgrid_grid-item-legend {
+    font-size: 30px;
+    line-height: 43px;
   }
   .ac-navgrid_grid-itemWrapper img {
     // height: 100%;

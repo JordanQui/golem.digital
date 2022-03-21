@@ -1,9 +1,9 @@
 <template>
   <div class="ac-navigation">
     <ul class="ac-navigation-wrapper">
-      <li @click="openModaleMail()" class="ac-navigation-item"><span class="icon icon-mail"></span></li>
-      <li @click="openModaleAbout()" class="ac-navigation-item"><span class="icon icon-info-home"></span></li>
       <li @click="openModaleInfo()" class="ac-navigation-item" :class="{ 'inactive': isHome }"><span class="icon icon-info"></span></li>
+      <li @click="openModaleAbout()" class="ac-navigation-item"><span class="icon icon-info-home"></span></li>
+      <li @click="openModaleMail()" class="ac-navigation-item"><span class="icon icon-mail"></span></li>
     </ul>
   </div>
 </template>

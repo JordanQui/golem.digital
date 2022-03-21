@@ -1,7 +1,7 @@
 <template>
   <div ref="modale" class="ac-modale ac-about" :class="theme">
     <span @click="closeModale" class="ac-modale_close icon-close"></span>
-    <div class="ac-modale_wrapper">
+    <div ref="modaleWrapper" class="ac-modale_wrapper">
       <div class="ac-modale_lang">
         <span @click="$store.commit('changeLang', 'EN')" :class="{ 'active': lang === 'EN' }">EN</span>
         <span>/</span>
@@ -20,7 +20,8 @@ export default {
   data() {
     return {
       document: {},
-      theme: 'light'
+      theme: 'light',
+      shadowHeight: false
     }
   },
   computed: {
@@ -76,7 +77,9 @@ export default {
   }
 
   &_wrapper {
-    width: 95%;
+    position: relative;
+    z-index: 10;
+    width: 92%;
     padding: 10px;
     max-height: 75vh;
     background-color: black;
@@ -85,10 +88,20 @@ export default {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    box-shadow: 10px 10px 0px 5px #818181;
+    box-shadow: 20px 20px 0px -5px #555555;
 
     &::-webkit-scrollbar {
       display: none;
+    }
+
+    &-shadow {
+      width: 92%; 
+      position: absolute;
+      height: 100%;
+      top: 10px;
+      left: 10px;
+      z-index: 1;
+      background: blue;
     }
   }
 

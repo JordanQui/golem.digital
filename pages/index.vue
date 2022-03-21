@@ -1,6 +1,6 @@
 <template>
   <section ref="projectwrapper" class="ac-pageWrapper ac-project">
-    <h2 class="ac-project_homeTitle">{{ document.data.title[0].text }}</h2>
+    <!-- <h2 class="ac-project_homeTitle">{{ document.data.title[0].text }}</h2>
     <div class="ac-project_caroussel">
       <div ref="caroussel" class="ac-project_caroussel-wrapper">
         <div class="ac-project_caroussel-item">
@@ -8,7 +8,7 @@
           <video  webkit-playsinline playsinline autoplay controls="false" muted loop v-else-if="document.data.caroussel[0].video.url" :src="document.data.caroussel[0].video.url"></video>
         </div>
       </div>
-    </div>
+    </div> -->
   </section>  
 </template>
 
@@ -17,23 +17,7 @@
 
 export default {
   name: 'Home',
-  async asyncData({ $prismic, params, error }) {
-    const document = await $prismic.api.getByUID('project', 'home')
-    if (document) {
-      return { document }
-    } else {
-      error({ statusCode: 404, message: 'Page not found' })
-    }
-  },
-  methods: {
-    setProjectHeigh() {
-      this.$refs.projectwrapper.style.height = window.innerHeight + 'px'  
-    }
-  },
-  mounted () {
-    this.setProjectHeigh()
-    this.$refs.caroussel.addEventListener('resize', this.handleResize);
-  },
+    
 }
 </script>
 

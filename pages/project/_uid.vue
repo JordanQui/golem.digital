@@ -8,11 +8,14 @@
           <img v-if="slide.image01.url" :data-src="slide.image01.url" :alt="slide.image01.alt" v-lazy-load>
           <video 
             v-else-if="slide.video.url" 
-            webkit-playsinline playsinline autoplay controls="false" muted loop 
+            webkit-playsinline playsinline autoplay controls="false" loop 
             :src="slide.video.url"
             style="pointer-events: none"
             v-lazy-load
           ></video>
+          <div v-else-if="slide.embed" class="ac-project_caroussel-item">
+            {{ slide.embed }}
+          </div>
         </div>
       </div>
       <div class="ac-project_caroussel-pagination">

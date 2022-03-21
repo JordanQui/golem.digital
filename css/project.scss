@@ -15,6 +15,7 @@
     padding: 10px 3%;
     font-style: italic;
     font-weight: 800;
+    width: 60%;
   }
 
   &_caroussel {
@@ -51,7 +52,6 @@
       flex-shrink: 0;
       height: 100%;
       width: 100%;
-      padding: 0 8%;
       margin: auto;
     }
   }
@@ -61,12 +61,13 @@
   }
 
   &_toGrid {
+    font-size: 39px;
+    z-index: 30;
     color: white;
-    font-size: 40px;
     position: absolute;
     top: 0;
     right: 0;
-    padding: 10px;
+    padding: 2.2%;
     cursor: pointer;
   }
 }
@@ -98,9 +99,13 @@
   .ac-project {
     &_caroussel {
       height: 100%;
+      &-item {
+        padding: 0 100px;
+      }
     }
     h2 {
       font-size: 44px;
+      width: auto;
       position: absolute;
       top: 0;
       left: 0;
@@ -113,7 +118,6 @@
     }
 
     &_toGrid {
-      font-size: 50px;
       bottom: 0;
       top: initial;
     }

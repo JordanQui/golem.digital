@@ -1,6 +1,6 @@
 <template>
   <div ref="mainwrapper" class="ac-layoutWrapper">
-    <span class="ac-layoutBackground"></span>
+    <span ref="bg" v-if="isBgVisible" class="ac-layoutBackground"></span>
     <LoadSpinner v-if="showHideSpinner" />
     <NavBar />
     <Nuxt />
@@ -22,7 +22,7 @@ import Info from '../components/Info.vue'
 import Mail from '../components/Mail.vue'
 import LoadSpinner from '../components/LoadSpinner.vue'
 
-import { gsap } from "gsap";
+import { gsap, Power4 } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 if (process.client) {
@@ -42,7 +42,7 @@ export default {
   },
   data() {
     return {
-      st: {},
+      st: false,
       showHideSpinner: true
     }
   },
@@ -50,18 +50,36 @@ export default {
     createScrollTrigger() {
       this.st = gsap.to(".ac-layoutBackground", {
         opacity: 0,
+        ease: Power4.easeOut,
         scrollTrigger: {
           trigger: ".ac-layoutBackground",
-          start: `top top`,
+          start: `100px top`,
           end: `${window.innerHeight} top`,
-          scrub: true,
+          scrub: 0.7,
         }
       })
     }
   }, 
+  computed: {
+    isBgVisible() {
+      return this.$route.name !== 'index'
+    }
+  },
+  watch: {
+    $route() {
+      if(!this.st) {
+        setTimeout(() => {
+          this.createScrollTrigger()
+          console.log('create st on reout change')
+        }, 500)
+      }
+    }
+  },
   mounted() {
     this.showHideSpinner = false;
-    this.createScrollTrigger()
+    if(this.$route.name !== 'index' && !this.st) {
+      this.createScrollTrigger()
+    }
   },
   beforeCreate() {
     this.showHideSpinner = true;
