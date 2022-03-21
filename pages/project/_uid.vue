@@ -1,5 +1,5 @@
 <template>
-  <section ref="projectwrapper" class="ac-pageWrapper ac-project" :style="{height: $route.name != 'index' ? '100vh' : '0px'}">
+  <section ref="projectwrapper" class="ac-pageWrapper ac-project">
     <h2>{{ document.data.title[0].text }}</h2>
     <span @click="scrollToGrid" class="ac-project_toGrid icon-menu"></span>
     <div class="ac-project_caroussel">
@@ -55,14 +55,18 @@ export default {
       this.setProjectHeigh()
     },
     setProjectHeigh() {
-      this.$refs.projectwrapper.style.height = window.innerHeight + 'px'  
+      if(this.$device.isMobile) {
+        this.$refs.projectwrapper.style.height = window.innerHeight + 'px'
+      } else {
+        this.$refs.projectwrapper.style.height = '100vh'
+      }
     },
     scrollToGrid() {
       document.documentElement.scrollTop = window.innerHeight
     }
   },
   mounted () {
-    // this.setProjectHeigh()
+    this.setProjectHeigh()
     this.$refs.caroussel.addEventListener('scroll', this.handleScroll)
   },
 }
