@@ -13,8 +13,7 @@
             webkit-playsinline playsinline autoplay controls="hidden" loop muted
             style="pointer-events: none"
           ></video>
-          <div v-else-if="slide.embed" v-html="slide.embed.html" class="ac-project_caroussel-item-embed">
-          </div>
+          <div v-else-if="slide.embed" v-html="slide.embed.html" class="ac-project_caroussel-item-embed"></div>
         </div>
       </div>
       <!-- <div class="ac-project_caroussel-pagination">
