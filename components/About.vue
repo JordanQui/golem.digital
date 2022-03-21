@@ -30,11 +30,15 @@ export default {
 .ac-about {
   &_content {
     font-size: 18px;
+
+    &-wrapper {
+      
+    }
   }
   &_container {
-    padding: 50px;
+    padding: 0 50px;
+    height: 45vh;
     overflow-y: scroll;
-    // height: 47vh;
   }
 }
 

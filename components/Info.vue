@@ -154,7 +154,7 @@ export default {
 
 @include media(l) {
   .ac-info {
-    font-size: 16px;
+    font-size: 20px;
     &_description {
       padding-right: 35px;
     }

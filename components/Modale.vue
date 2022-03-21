@@ -151,11 +151,19 @@ export default {
   .ac-modale {
     &_close {
       padding: 50px;
-      right: 13%;
+      right: 8%;
       top: 27px;
     }
     &_wrapper {
       max-height: 80vh;
+    }
+  }
+}
+
+@include media(xl) {
+  .ac-modale {
+    &_close {
+      right: 13%;
     }
   }
 }
