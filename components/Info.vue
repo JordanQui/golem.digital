@@ -91,7 +91,6 @@ export default {
   },
   async fetch() {
     this.document = await this.$prismic.api.getByUID('project', this.uid)
-    console.log('info data', this.document.data)
   },
   created() {
     this.uid = this.$route.params.uid ? this.$route.params.uid : 'home'
@@ -104,6 +103,7 @@ export default {
 
 .ac-info {
   height: 52vh;
+  font-size: 14px;
 
   &_wrapper {
     display: flex;
@@ -154,6 +154,7 @@ export default {
 
 @include media(l) {
   .ac-info {
+    font-size: 16px;
     &_description {
       padding-right: 35px;
     }

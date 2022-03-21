@@ -10,12 +10,12 @@
         <span v-if="lang === 'FR'">renseignements</span>  
         <span v-if="lang === 'EN'">general enquiries</span>  
       </div>
-      <prismic-link :field="document.data.mail" target="_blank" class="ac-mail_link">contact@golem.digital</prismic-link>
+      <prismic-link :field="document.data.contact" target="_blank" class="ac-mail_link">contact@golem.digital</prismic-link>
     </div>
 
     <div class="ac-mail_container">
       <div class="ac-mail_label">ariel claudet</div>
-      <prismic-link :field="document.data.contact" target="_blank" class="ac-mail_link">ariel@golem.digital</prismic-link>
+      <prismic-link :field="document.data.mail" target="_blank" class="ac-mail_link">ariel@golem.digital</prismic-link>
     </div>
 
     <div class="ac-mail_container">
@@ -56,7 +56,7 @@ export default {
 
 .ac-mail {
   &_wrapper {
-    height: 48vh;
+    height: 50vh;
     overflow-y: scroll;
   }
   &_content {

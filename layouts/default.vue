@@ -54,8 +54,8 @@ export default {
         scrollTrigger: {
           trigger: ".ac-layoutBackground",
           start: `100px top`,
-          end: `${window.innerHeight} top`,
-          scrub: 0.7,
+          end: `${window.innerHeight + 500}px top`,
+          scrub: 0.7
         }
       })
     }
@@ -70,7 +70,6 @@ export default {
       if(!this.st) {
         setTimeout(() => {
           this.createScrollTrigger()
-          console.log('create st on reout change')
         }, 500)
       }
     }

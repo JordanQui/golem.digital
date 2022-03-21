@@ -79,7 +79,7 @@ export default {
   &_wrapper {
     position: relative;
     z-index: 10;
-    width: 92%;
+    width: 85%;
     padding: 30px;
     max-height: 75vh;
     background-color: black;
@@ -111,8 +111,7 @@ export default {
     text-align: right;
     padding: 15px;
     cursor: pointer;
-    right: 13%;
-    top: 27px;
+    right: 0;
   }
 
   &_lang {
@@ -152,6 +151,8 @@ export default {
   .ac-modale {
     &_close {
       padding: 50px;
+      right: 13%;
+      top: 27px;
     }
     &_wrapper {
       max-height: 80vh;

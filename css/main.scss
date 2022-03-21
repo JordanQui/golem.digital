@@ -91,14 +91,14 @@ iframe {
 
 .ac-info_meta::-webkit-scrollbar,
 .ac-info_description::-webkit-scrollbar,
-.ac-about_container::-webkit-scrollbar
+.ac-about_container::-webkit-scrollbar,
 .ac-mail_wrapper::-webkit-scrollbar {
   width: 10px;
   height: 10px;
 }
 .ac-info_meta::-webkit-scrollbar-track,
 .ac-info_description::-webkit-scrollbar-track,
-.ac-about_container::-webkit-scrollbar-track
+.ac-about_container::-webkit-scrollbar-track,
 .ac-mail_wrapper::-webkit-scrollbar-track {
   border-radius: 10px;
   background: black;
@@ -106,7 +106,7 @@ iframe {
 }
 .ac-info_meta::-webkit-scrollbar-thumb,
 .ac-info_description::-webkit-scrollbar-thumb,
-.ac-about_container::-webkit-scrollbar-thumb
+.ac-about_container::-webkit-scrollbar-thumb,
 .ac-mail_wrapper::-webkit-scrollbar-thumb {
   border-radius: 10px;
   background: white;

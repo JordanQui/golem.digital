@@ -54,7 +54,6 @@ export default {
     },
     handleScroll(e) {
       this.scrollPos = e.target.scrollLeft
-      console.log(e.target.scrollLeft)
     },
     handleResize() {
       this.setProjectHeigh()
