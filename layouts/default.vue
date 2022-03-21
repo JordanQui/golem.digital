@@ -79,7 +79,7 @@ export default {
     if(this.$route.name !== 'index' && !this.st) {
       this.createScrollTrigger()
     }
-    console.log('device : ', this.$device.isMobile)
+    // console.log('device : ', this.$device.isMobile)
   },
   beforeCreate() {
     this.showHideSpinner = true;
