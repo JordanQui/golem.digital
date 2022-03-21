@@ -73,14 +73,14 @@ export default {
   }
 
   &_content-wrapper {
-    margin: 50px 0;
+    margin: 70px 0;
   }
 
   &_wrapper {
     position: relative;
     z-index: 10;
     width: 92%;
-    padding: 10px;
+    padding: 30px;
     max-height: 75vh;
     background-color: black;
     color: white;
@@ -107,11 +107,12 @@ export default {
 
   &_close {
     position: absolute;
-    font-size: 40px;
+    font-size: 35px;
     text-align: right;
     padding: 15px;
     cursor: pointer;
-    right: 0;
+    right: 13%;
+    top: 27px;
   }
 
   &_lang {
@@ -142,7 +143,7 @@ export default {
 @include media (m) {
   .ac-modale {
     &_wrapper {
-      width: 80%;
+      width: 59%;
     }
   }
 }
@@ -153,7 +154,7 @@ export default {
       padding: 50px;
     }
     &_wrapper {
-      max-height: 64vh;
+      max-height: 80vh;
     }
   }
 }

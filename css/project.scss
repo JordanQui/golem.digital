@@ -25,6 +25,14 @@
     top: 50%;
     transform: translateY(-50%);
 
+    &-pagination-right:hover {
+      cursor: e-resize;
+    }
+
+    &-pagination-left:hover {
+      cursor: w-resize;
+    }
+
     &-wrapper {
       position: relative;
       width: 100vw;
@@ -52,6 +60,16 @@
       height: 100%;
       width: 100%;
       margin: auto;
+
+      &-embed {
+        width: 100%;
+        height: 100%;
+
+        & > * {
+          width: 100%;
+          height: 100%;
+        }
+      }
     }
   }
 

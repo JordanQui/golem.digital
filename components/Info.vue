@@ -103,9 +103,12 @@ export default {
 @import '@/css/main.scss';
 
 .ac-info {
+  height: 52vh;
+
   &_wrapper {
     display: flex;
-    max-height: 50vh;
+    height: 100%;
+    // max-height: 50vh;
   }
   &_description {
     width: 80%;
@@ -113,10 +116,16 @@ export default {
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
   }
+  // &_content a {
+  //   color: #a88bf5;
+  //   text-decoration: underline;
+  // }
   &_meta {
     padding-left: 10px;
+    padding-right: 25px;
     overflow-y: scroll;
     overflow-x: hidden;
+    width: 50%;
     -webkit-overflow-scrolling: touch;
 
     &-item {

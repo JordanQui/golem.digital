@@ -34,7 +34,7 @@ export default {
   &_container {
     padding: 50px;
     overflow-y: scroll;
-    height: 47vh;
+    // height: 47vh;
   }
 }
 

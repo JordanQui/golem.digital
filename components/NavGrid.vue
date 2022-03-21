@@ -40,6 +40,7 @@ export default {
 
 .ac-navgrid {
   position: relative;
+  font-family: "Raleway";
   
   &_wrapper {
     position: relative;
@@ -57,13 +58,9 @@ export default {
     text-transform: uppercase;
     line-height: 60px;
     overflow: hidden;
-    width: 100%;
+    width: 3000px;
 
     span {
-      // position: absolute;
-      // top: 0;
-      // animation: defile 10s infinite alternate;
-      // white-space: nowrap;
       padding-right: 10px;
       float: left;
     }
@@ -73,7 +70,7 @@ export default {
     display: grid;
     grid-gap: 5px;
     grid-template-columns: repeat(2, 1fr);
-    margin-bottom: 80px;
+    margin-bottom: 20px;
 
     &-item {
       position: relative;
@@ -87,7 +84,7 @@ export default {
 
       &-legend {
         line-height: 33px;
-        padding: 5px 0;
+        padding: 5px 0 2px;
         transition: opacity .3s ease-in;
         opacity: 0;
         font-size: 20px;
@@ -158,7 +155,7 @@ export default {
 
 @include media (l) {
   .ac-navgrid_wrapper {
-    padding: 50px 8%;
+    padding: 50px 80px;
   }
   .ac-navgrid_grid {
     grid-gap: 50px;
@@ -181,7 +178,7 @@ export default {
     }
   }
   .ac-navgrid_grid-item-legend {
-    font-size: 38px;
+    font-size: 34px;
   }
   @keyframes defile {
     0% { left: -1500px; }
