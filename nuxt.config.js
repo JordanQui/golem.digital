@@ -1,6 +1,6 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
-  target: 'universal',
+  target: 'static',
   head: {
     title: 'Ariel Claudet',
     htmlAttrs: {

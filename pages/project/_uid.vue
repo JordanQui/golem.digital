@@ -1,7 +1,7 @@
 <template>
   <section ref="projectwrapper" class="ac-pageWrapper ac-project">
     <h2>{{ document.data.title[0].text }}</h2>
-    <span @click="scrollToGrid" class="ac-project_toGrid icon-menu"></span>
+    <span :class="{ 'inactive': showGridLink() }" @click="scrollToGrid" class="ac-project_toGrid icon-menu"></span>
     <div class="ac-project_progression"></div>
     <div class="ac-project_caroussel">
       <div ref="caroussel" class="ac-project_caroussel-wrapper">
@@ -63,14 +63,19 @@ export default {
       } else {
         this.$refs.projectwrapper.style.height = '100vh'
       }
-      this.$refs.projectwrapper.style.height = '100vh'
+      // this.$refs.projectwrapper.style.height = '100vh'
     },
     scrollToGrid() {
       document.documentElement.scroll({top: window.innerHeight, left: 0, behavior: 'smooth'})
+    },
+    showGridLink(e) {
+      console.log(e)
+      // return e.target.scrollTop > 5
     }
   },
   mounted () {
     this.setProjectHeigh()
+    document.documentElement.addEventListener('scroll', this.showGridLink)
     this.$refs.caroussel.addEventListener('scroll', this.handleScroll)
   },
 }

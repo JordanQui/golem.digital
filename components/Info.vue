@@ -163,7 +163,7 @@ export default {
       padding: 0 80px;
     }
     &_meta {
-      padding-left: 50px;
+      padding-left: 35px;
     }
     &-item {
       &-label {

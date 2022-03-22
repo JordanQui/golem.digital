@@ -86,6 +86,15 @@
     right: 0;
     padding: 2.2%;
     cursor: pointer;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity .3s ease-in,
+      visibility 0s ease-in;
+
+    &.inactive {
+      opacity: 0;
+      visibility: hidden;
+    }
   }
 }
 

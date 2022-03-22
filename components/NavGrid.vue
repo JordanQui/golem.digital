@@ -5,7 +5,7 @@
         <span v-for="n in 30" :key="n.id">golem</span>
       </section>
       <section class="ac-navgrid_grid">
-        <div v-for="project in document.results" :key="project.id" class="ac-navgrid_grid-item">
+        <div v-for="project in sortProjects" :key="project.id" class="ac-navgrid_grid-item">
           <nuxt-link :to="`/project/${project.uid}`" class="ac-navgrid_grid-itemWrapper">
             <img :src="project.data.caroussel[0].image01.url" alt="">
             <div class="ac-navgrid_grid-item-legend">
@@ -23,7 +23,7 @@ export default {
   name: 'NavGrid',
   data() {
     return {
-      document: {},
+      document: {}
     }
   },
   async fetch() {
@@ -32,6 +32,18 @@ export default {
       this.$prismic.predicates.not('my.project.uid', 'home')
     ])
   },
+  computed: {
+    sortProjects() {
+      let list = []
+      if(Object.keys(this.document).length !== 0) {
+        for(let i = 0; i < this.document.results.length; i++) {
+          const doc = this.document.results[i]
+          list.splice(parseInt(doc.data.orderid), 0, doc)
+        } 
+      }
+      return list
+    }
+  }
 }
 </script>
 
@@ -101,6 +113,7 @@ export default {
 
         &-text {
           text-align: center;
+          padding: 0 20px;
         }
       }
     }
