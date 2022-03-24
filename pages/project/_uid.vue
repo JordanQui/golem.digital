@@ -1,6 +1,6 @@
 <template>
   <section ref="projectwrapper" class="ac-pageWrapper ac-project">
-    <LoadSpinner v-if="showHideSpinner" />
+    <!-- <LoadSpinner v-if="showHideSpinner" /> -->
     <h2>{{ document.data.title[0].text }}</h2>
     <span :class="{ 'inactive': !this.showGridLink }" @click="scrollToGrid" class="ac-project_toGrid icon-menu"></span>
     <div class="ac-project_progression"></div>
