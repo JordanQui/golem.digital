@@ -6,7 +6,7 @@
       </section>
       <section class="ac-navgrid_grid">
         <div v-for="project in sortProjects" :key="project.id" class="ac-navgrid_grid-item">
-          <nuxt-link :to="`/project/${project.uid}`" class="ac-navgrid_grid-itemWrapper">
+          <nuxt-link :to="`/project/${project.uid}`" @click.native="scrollTop()" class="ac-navgrid_grid-itemWrapper">
             <img :src="project.data.caroussel[0].image01.url" alt="">
             <div class="ac-navgrid_grid-item-legend">
               <span class="ac-navgrid_grid-item-legend-text">{{ project.data.title[0].text }}</span>
@@ -31,6 +31,11 @@ export default {
       this.$prismic.predicates.at('document.type','project'),
       this.$prismic.predicates.not('my.project.uid', 'home')
     ])
+  },
+  methods: {
+    scrollTop() {
+      document.documentElement.scroll({top: 0, behavior: 'smooth'})
+    }
   },
   computed: {
     sortProjects() {

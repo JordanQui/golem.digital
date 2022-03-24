@@ -1,5 +1,6 @@
 <template>
   <section ref="projectwrapper" class="ac-pageWrapper ac-project">
+    <LoadSpinner v-if="showHideSpinner" />
     <h2>{{ document.data.title[0].text }}</h2>
     <span :class="{ 'inactive': !this.showGridLink }" @click="scrollToGrid" class="ac-project_toGrid icon-menu"></span>
     <div class="ac-project_progression"></div>
@@ -25,9 +26,14 @@
 </template>
 
 <script>
+import LoadSpinner from '~/components/LoadSpinner.vue'
+
 export default {
   name: 'Project',
   layout: 'default',
+  components: {
+    LoadSpinner
+  },
   data() {
     return {
       scrollPos: 0,
@@ -57,12 +63,12 @@ export default {
       this.setProjectHeigh()
     },
     setProjectHeigh() {
-      if(this.$device.isMobile) {
+      console.log('project mq', this.$mq)
+      if(this.$mq === 'sm' || this.$mq === 'md') {
         this.$refs.projectwrapper.style.height = window.innerHeight + 'px'
       } else {
         this.$refs.projectwrapper.style.height = '100vh'
       }
-      // this.$refs.projectwrapper.style.height = '100vh'
     },
     scrollToGrid() {
       document.documentElement.scroll({top: window.innerHeight, left: 0, behavior: 'smooth'})
@@ -72,10 +78,13 @@ export default {
     }
   },
   mounted () {
+    this.showHideSpinner = false
     this.setProjectHeigh()
     window.addEventListener('scroll', this.setShowGridLink)
     this.$refs.caroussel.addEventListener('scroll', this.handleScroll)
-    // this.$refs.caroussel.click()
+  },
+  beforeCreate() {
+    this.showHideSpinner = true
   }
 }
 </script>

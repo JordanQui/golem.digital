@@ -32,6 +32,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    { src: "@/plugins/clickoutside", ssr: false }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -52,15 +53,12 @@ export default {
       if (doc.isBroken) {
         return '/not-found';
       }
-    
       if (doc.uid === 'home') {
         return '/project/home';
       }
-    
       if (doc.type === 'project') {
         return '/project/' + doc.uid;
       }
-    
       return '/not-found';
     }
   },

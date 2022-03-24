@@ -26,18 +26,38 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-about-inv:before {
+  content: "\e905";
+}
+.icon-mail-inv:before {
+  content: "\e907";
+}
+
 .icon-info:before {
   content: "\e900";
 }
+.icon-info:hover:before {
+  content: "\e906";
+}
+
 .icon-menu:before {
   content: "\e904";
 }
+
 .icon-info-home:before {
   content: "\e901";
 }
+.icon-info-home:hover:before {
+  content: "\e905";
+}
+
 .icon-mail:before {
   content: "\e902";
 }
+.icon-mail:hover:before {
+  content: "\e907";
+}
+
 .icon-close:before {
   content: "\e903";
 }

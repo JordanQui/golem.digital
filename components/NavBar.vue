@@ -1,10 +1,18 @@
 <template>
   <div class="ac-navigation">
     <ul class="ac-navigation-wrapper">
-      <li v-if="!$device.isMobile" @click="openModaleInfo()" class="ac-navigation-item" :class="{ 'inactive': isHome }"><span class="icon icon-info"></span></li>
-      <li @click="openModaleAbout()" class="ac-navigation-item"><span class="icon icon-info-home"></span></li>
-      <li @click="openModaleMail()" class="ac-navigation-item"><span class="icon icon-mail"></span></li>
-      <li v-if="$device.isMobile" @click="openModaleInfo()" class="ac-navigation-item" :class="{ 'inactive': isHome }"><span class="icon icon-info"></span></li>
+      <li v-if="$mq === 'sm' || $mq === 'md'" @click="openModaleInfo()" class="ac-navigation-item" :class="{ 'inactive': isHome }">
+        <span class="icon icon-info"></span>
+      </li>
+      <li @click="openModaleAbout()" class="ac-navigation-item">
+        <span class="icon icon-info-home"></span>
+      </li>
+      <li @click="openModaleMail()" class="ac-navigation-item">
+        <span class="icon icon-mail"></span>
+      </li>
+      <li v-if="$mq != 'sm' || $mq != 'md'" @click="openModaleInfo()" class="ac-navigation-item" :class="{ 'inactive': isHome }">
+        <span class="icon icon-info"></span>
+      </li>
     </ul>
   </div>
 </template>
