@@ -70,7 +70,14 @@ export default {
     text-transform: uppercase;
     line-height: 60px;
     overflow: hidden;
-    width: 3000px;
+    width: 3380px;
+    transform: translateX(-80%);
+    mix-blend-mode: difference;
+    animation: 34s linear 0s infinite defile_mobile;
+
+    @include media(l) {
+      animation: 3s linear 0s infinite defile_large;
+    }
 
     span {
       padding-right: 10px;
@@ -96,6 +103,7 @@ export default {
 
       &-legend {
         line-height: 33px;
+        word-break: break-word;
         padding: 5px 0 2px;
         transition: opacity .3s ease-in;
         opacity: 0;
@@ -135,9 +143,14 @@ export default {
   }
 }
 
-@keyframes defile {
-  0% { left: -1500px; }
-  100% { left: 1500px; }
+@keyframes defile_mobile {
+  0% { transform: translateX(-80%); }
+  100% { transform: translateX(0%); }
+}
+
+@keyframes defile_large {
+  0% { transform: translate(-20vw, 0%) rotate(-90deg); }
+  100% { transform: translate(-20vw, -260%) rotate(-90deg); }
 }
 
 
@@ -185,7 +198,7 @@ export default {
   .ac-navgrid_bandeau {
     position: absolute;
     font-size: 42px;
-    transform: translate(-20vw, 0vw) rotate(-90deg);
+    // transform: translate(-20vw, 0vw) rotate(-90deg);
     width: 130%;
     left: -42%;
     top: 50%;

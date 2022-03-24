@@ -45,6 +45,9 @@ export default {
       document.documentElement.classList.add('no-scroll')
       this.$refs.modale.classList.add('active')
    })
+  },
+  beforeDestroy(){
+    this.$nuxt.$off('open-modale')
   }
 }
 </script>

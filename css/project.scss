@@ -26,11 +26,11 @@
     transform: translateY(-50%);
 
     &-pagination-right:hover {
-      cursor: e-resize;
+      cursor: url("~assets/arrow.svg") 16 16, pointer;
     }
 
     &-pagination-left:hover {
-      cursor: w-resize;
+      cursor: url("~assets/arrowleft.svg") 16 16, pointer;
     }
 
     &-wrapper {
@@ -94,6 +94,8 @@
     &.inactive {
       opacity: 0;
       visibility: hidden;
+      transition: opacity .3s ease-in,
+        visibility 0s ease-in;
     }
   }
 }

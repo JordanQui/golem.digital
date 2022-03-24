@@ -1,7 +1,7 @@
 <template>
   <section ref="projectwrapper" class="ac-pageWrapper ac-project">
     <h2>{{ document.data.title[0].text }}</h2>
-    <span :class="{ 'inactive': showGridLink() }" @click="scrollToGrid" class="ac-project_toGrid icon-menu"></span>
+    <span :class="{ 'inactive': !this.showGridLink }" @click="scrollToGrid" class="ac-project_toGrid icon-menu"></span>
     <div class="ac-project_progression"></div>
     <div class="ac-project_caroussel">
       <div ref="caroussel" class="ac-project_caroussel-wrapper">
@@ -16,10 +16,10 @@
           <div v-else-if="slide.embed" v-html="slide.embed.html" class="ac-project_caroussel-item-embed"></div>
         </div>
       </div>
-      <!-- <div class="ac-project_caroussel-pagination">
+      <div class="ac-project_caroussel-pagination">
         <span @click="prevSlide()" class="ac-project_caroussel-pagination-left"></span>
         <span @click="nextSlide()" class="ac-project_caroussel-pagination-right"></span>
-      </div> -->
+      </div>
     </div>
   </section>
 </template>
@@ -30,7 +30,8 @@ export default {
   layout: 'default',
   data() {
     return {
-      scrollPos: 0
+      scrollPos: 0,
+      showGridLink: true,
     }
   },
   async asyncData({ $prismic, params, error }) {
@@ -44,12 +45,10 @@ export default {
   },
   methods: {
     prevSlide() {
-      console.log('prev', [this.$refs.caroussel.scrollLeft, window.innerWidth, this.scrollPos])
-      this.$refs.caroussel.scrollLeft = this.scrollPos - 500
+      this.$refs.caroussel.scrollLeft = this.scrollPos - window.innerWidth
     },
     nextSlide() {
-      console.log('next', [this.$refs.caroussel.scrollLeft, window.innerWidth, this.scrollPos])
-      this.$refs.caroussel.scrollLeft = this.scrollPos + 500
+      this.$refs.caroussel.scrollLeft = this.scrollPos + window.innerWidth
     },
     handleScroll(e) {
       this.scrollPos = e.target.scrollLeft
@@ -68,16 +67,16 @@ export default {
     scrollToGrid() {
       document.documentElement.scroll({top: window.innerHeight, left: 0, behavior: 'smooth'})
     },
-    showGridLink(e) {
-      console.log(e)
-      // return e.target.scrollTop > 5
+    setShowGridLink(e) {
+      this.showGridLink = e.target.documentElement.scrollTop < 10
     }
   },
   mounted () {
     this.setProjectHeigh()
-    document.documentElement.addEventListener('scroll', this.showGridLink)
+    window.addEventListener('scroll', this.setShowGridLink)
     this.$refs.caroussel.addEventListener('scroll', this.handleScroll)
-  },
+    // this.$refs.caroussel.click()
+  }
 }
 </script>
 

@@ -1,6 +1,9 @@
 <template>
-  <div ref="mainwrapper" class="ac-layoutWrapper">
-    <span ref="bg" v-if="isBgVisible" class="ac-layoutBackground"></span>
+  <div 
+    ref="mainwrapper" 
+    class="ac-layoutWrapper" 
+  >
+    <span ref="bg" class="ac-layoutBackground"></span>
     <LoadSpinner v-if="showHideSpinner" />
     <NavBar />
     <Nuxt />
@@ -55,14 +58,9 @@ export default {
           trigger: ".ac-layoutBackground",
           start: `100px top`,
           end: `${window.innerHeight + 500}px top`,
-          scrub: 0.7
+          scrub: 0.1
         }
       })
-    }
-  }, 
-  computed: {
-    isBgVisible() {
-      return this.$route.name !== 'index'
     }
   },
   watch: {
@@ -75,13 +73,13 @@ export default {
     }
   },
   mounted() {
-    this.showHideSpinner = false;
-    if(this.$route.name !== 'index' && !this.st) {
+    this.showHideSpinner = false
+    if(!this.st) {
       this.createScrollTrigger()
     }
   },
   beforeCreate() {
-    this.showHideSpinner = true;
+    this.showHideSpinner = true
   }
 }
 </script>
