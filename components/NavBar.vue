@@ -10,7 +10,7 @@
       <li @click="openModaleMail()" class="ac-navigation-item">
         <span class="icon icon-mail"></span>
       </li>
-      <li v-if="$mq != 'sm' || $mq != 'md'" @click="openModaleInfo()" class="ac-navigation-item" :class="{ 'inactive': isHome }">
+      <li v-if="$mq === 'lg' || $mq === 'xl'" @click="openModaleInfo()" class="ac-navigation-item" :class="{ 'inactive': isHome }">
         <span class="icon icon-info"></span>
       </li>
     </ul>
