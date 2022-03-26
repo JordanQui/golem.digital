@@ -17,6 +17,7 @@
     "nuxt-modernizr": "^2.0.10",
     "nuxt-mq": "^2.0.2",
     "prismic-cli": "^4.2.2",
+    "smoothscroll-polyfill": "^0.4.4",
     "v-click-outside": "^3.1.2",
     "vue-observe-visibility": "^1.0.0"
   },

@@ -14,7 +14,10 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,300;0,600;1,700;1,900&display=swap' },
+      { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,300;0,600;1,700;1,900&display=swap' }
+    ],
+    script: [
+      { defer: true, src: 'https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js' }
     ]
   },
 
