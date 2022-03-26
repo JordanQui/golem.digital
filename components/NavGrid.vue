@@ -98,7 +98,6 @@ export default {
 
     &-item {
       position: relative;
-      height: 240px;
 
       &:hover {
         .ac-navgrid_grid-item-legend {
