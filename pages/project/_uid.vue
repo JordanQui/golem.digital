@@ -1,6 +1,6 @@
 <template>
   <section ref="projectwrapper" class="ac-pageWrapper ac-project">
-    <!-- <LoadSpinner v-if="showHideSpinner" /> -->
+    <LoadSpinner v-if="showHideSpinner" />
     <h2>{{ document.data.title[0].text }}</h2>
     <span :class="{ 'inactive': !this.showGridLink }" @click="scrollToGrid" class="ac-project_toGrid icon-menu"></span>
     <div class="ac-project_progression"></div>
@@ -38,6 +38,7 @@ export default {
     return {
       scrollPos: 0,
       showGridLink: true,
+      showHideSpinner: true
     }
   },
   async asyncData({ $prismic, params, error }) {
@@ -51,10 +52,10 @@ export default {
   },
   methods: {
     prevSlide() {
-      this.$refs.caroussel.scrollLeft = this.scrollPos - window.innerWidth
+      this.$refs.caroussel.scroll({left: this.scrollPos - window.innerWidth, behavior: 'smooth'})
     },
     nextSlide() {
-      this.$refs.caroussel.scrollLeft = this.scrollPos + window.innerWidth
+      this.$refs.caroussel.scroll({left: this.scrollPos + window.innerWidth, behavior: 'smooth'})
     },
     handleScroll(e) {
       this.scrollPos = e.target.scrollLeft

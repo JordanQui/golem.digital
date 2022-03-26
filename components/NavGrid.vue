@@ -153,8 +153,8 @@ export default {
 }
 
 @keyframes defile_large {
-  0% { transform: translate(-20vw, 0%) rotate(-90deg); }
-  100% { transform: translate(-20vw, -260%) rotate(-90deg); }
+  0% { transform: translate(0, 0%) rotate(-90deg); }
+  100% { transform: translate(0, -260%) rotate(-90deg); }
 }
 
 
@@ -202,11 +202,10 @@ export default {
   .ac-navgrid_bandeau {
     position: absolute;
     font-size: 42px;
-    // transform: translate(-20vw, 0vw) rotate(-90deg);
-    width: 130%;
-    left: -42%;
-    top: 50%;
-    left: -41.5vw;
+    transform-origin: top left;
+    width: 150%;
+    top: 130%;
+    left: 0.7vw;
 
     span {
       animation: defile 30s infinite alternate;
@@ -221,9 +220,9 @@ export default {
   }
 }
 
-@include media(xl) {
-  .ac-navgrid_bandeau {
-    left: -42.8vw;
-  }
-}
+// @include media(xl) {
+//   .ac-navgrid_bandeau {
+//     left: -42.8vw;
+//   }
+// }
 </style>
