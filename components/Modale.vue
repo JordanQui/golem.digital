@@ -32,6 +32,7 @@ export default {
   methods: {
     closeModale() {
       this.$refs.modale.classList.remove('active')
+      $nuxt.$emit('remove-hold-active')
       document.documentElement.classList.remove('no-scroll')
     }
   },
@@ -76,7 +77,7 @@ export default {
   }
 
   &_content-wrapper {
-    margin: 70px 0;
+    margin: 50px 0 20px;
   }
 
   &_wrapper {
@@ -152,6 +153,9 @@ export default {
 
 @include media (l) {
   .ac-modale {
+    &_content-wrapper {
+      margin: 70px 0;
+    }
     &_wrapper {
       width: 59%;
     }

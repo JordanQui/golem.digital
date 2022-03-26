@@ -207,6 +207,7 @@ export default {
     width: 130%;
     left: -42%;
     top: 50%;
+    left: -41.5vw;
 
     span {
       animation: defile 30s infinite alternate;
@@ -218,6 +219,12 @@ export default {
   @keyframes defile {
     0% { left: -1500px; }
     100% { left: 1500px; }
+  }
+}
+
+@include media(xl) {
+  .ac-navgrid_bandeau {
+    left: -42.8vw;
   }
 }
 </style>

@@ -15,6 +15,7 @@
     font-style: italic;
     font-weight: 800;
     width: 60%;
+    word-break: break-all;
   }
 
   &_caroussel {
@@ -116,7 +117,7 @@
       &-left,
       &-right {
         pointer-events: all;
-        width: 15%;
+        width: 50%;
         height: 100%;
       }
     }

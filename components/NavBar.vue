@@ -1,17 +1,14 @@
 <template>
   <div class="ac-navigation">
     <ul class="ac-navigation-wrapper">
-      <li v-if="$mq === 'sm' || $mq === 'md'" @click="openModaleInfo()" class="ac-navigation-item" :class="{ 'inactive': isHome }">
-        <span class="icon icon-info"></span>
+      <li @click="openModaleInfo" class="ac-navigation-item" :class="{ 'inactive': isHome }">
+        <span ref="iconnav1" class="icon icon-info"></span>
       </li>
-      <li @click="openModaleAbout()" class="ac-navigation-item">
-        <span class="icon icon-info-home"></span>
+      <li @click="openModaleAbout" class="ac-navigation-item">
+        <span ref="iconnav2" class="icon icon-info-home"></span>
       </li>
-      <li @click="openModaleMail()" class="ac-navigation-item">
-        <span class="icon icon-mail"></span>
-      </li>
-      <li v-if="$mq === 'lg' || $mq === 'xl'" @click="openModaleInfo()" class="ac-navigation-item" :class="{ 'inactive': isHome }">
-        <span class="icon icon-info"></span>
+      <li @click="openModaleMail" class="ac-navigation-item">
+        <span ref="iconnav3" class="icon icon-mail"></span>
       </li>
     </ul>
   </div>
@@ -26,23 +23,33 @@ export default {
     }
   },
   methods: {
-    openModaleAbout() {
+    openModaleAbout(event) {
+      event.target.classList.add('active')
       this.$store.commit('changeModale', 'about')
       $nuxt.$emit('open-modale')
     },
-    openModaleInfo() {
+    openModaleInfo(event) {
       if(!this.isHome) {
+        event.target.classList.add('active')
         this.$store.commit('changeModale', 'info')
         $nuxt.$emit('open-modale')
       }
     },
-    openModaleMail() {
+    openModaleMail(event) {
+      event.target.classList.add('active')
       this.$store.commit('changeModale', 'mail')
       $nuxt.$emit('open-modale')
     },
     scrollDown() {
       console.log('clicked', document.body)
     }
+  },
+  created() {
+    this.$nuxt.$on('remove-hold-active', () => {
+      this.$refs.iconnav1.classList.remove('active')
+      this.$refs.iconnav2.classList.remove('active')
+      this.$refs.iconnav3.classList.remove('active')
+    })
   }
 }
 </script>
@@ -146,6 +153,10 @@ export default {
     margin: 25px 1%;
     width: auto;
     height: 150px;
+
+    &-item:first-child {
+      order: 3;
+    } 
 
      &-wrapper {
       display: flex;

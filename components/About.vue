@@ -32,7 +32,7 @@ export default {
     font-size: 18px;
   }
   &_container {
-    padding: 0 50px;
+    padding: 0 10px;
     height: 45vh;
     overflow-y: scroll;
   }
@@ -40,6 +40,9 @@ export default {
 
 @include media(l) {
   .ac-about {
+    &_container {
+      padding: 0 50px;
+    }
     &_content {
       font-size: 24px;
     }

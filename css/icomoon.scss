@@ -36,6 +36,7 @@
 .icon-info:before {
   content: "\e900";
 }
+.icon-info.active:before,
 .icon-info:hover:before {
   content: "\e906";
 }
@@ -47,6 +48,7 @@
 .icon-info-home:before {
   content: "\e901";
 }
+.icon-info-home.active:before,
 .icon-info-home:hover:before {
   content: "\e905";
 }
@@ -54,6 +56,7 @@
 .icon-mail:before {
   content: "\e902";
 }
+.icon-mail.active:before,
 .icon-mail:hover:before {
   content: "\e907";
 }
