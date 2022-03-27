@@ -73,6 +73,7 @@ export default {
     ],
     ['nuxt-lazy-load', {
       directiveOnly: true,
+      defaultImage: 'default.png',
     }],
     [
       'nuxt-mq',
