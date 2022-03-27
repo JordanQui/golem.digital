@@ -46,7 +46,13 @@ export default {
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
     '@nuxtjs/prismic',
+    "@nuxt/image",
   ],
+
+  image: {
+    provider: "prismic",
+    prismic: {}
+  },
   
   prismic: {
     endpoint: 'https://arielclaudetcom.cdn.prismic.io/api/v2',
@@ -68,6 +74,7 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxt/image',
     ['@nuxtjs/device',
       {defaultUserAgent: 'Mozilla/5.0 (Linux; Android 5.1.1; Nexus 6 Build/LYZ28E) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.39 Mobile Safari/537.36'}
     ],

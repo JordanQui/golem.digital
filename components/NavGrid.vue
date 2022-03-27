@@ -44,7 +44,9 @@ export default {
         for(let i = 0; i < this.document.results.length; i++) {
           const doc = this.document.results[i]
           list.splice(parseInt(doc.data.orderid), 0, doc)
+          console.log(`sorted-${i}`, [doc.data.title[0].text, parseInt(doc.data.orderid), list[parseInt(doc.data.orderid)]])
         } 
+        console.log('list', list)
       }
       return list
     }
