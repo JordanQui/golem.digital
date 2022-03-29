@@ -13,7 +13,6 @@
             :src="slide.video.url"
             webkit-playsinline playsinline autoplay controls="hidden" loop muted
             style="pointer-events: none"
-            v-lazy-load
           ></video>
           <div v-else-if="slide.embed" v-html="slide.embed.html" class="ac-project_caroussel-item-embed"></div>
         </div>

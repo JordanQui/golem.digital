@@ -23,7 +23,7 @@ export default {
   name: 'NavGrid',
   data() {
     return {
-      document: {}
+      document: {},
     }
   },
   async fetch() {
@@ -39,18 +39,20 @@ export default {
   },
   computed: {
     sortProjects() {
-      let list = []
+      const projectNbr = this.document.results.length
+      let list = new Array(projectNbr)
+      list.fill(0, 0, projectNbr)
+      
       if(Object.keys(this.document).length !== 0) {
-        for(let i = 0; i < this.document.results.length; i++) {
+        for(let i = 0; i < projectNbr; i++) {
           const doc = this.document.results[i]
-          list.splice(parseInt(doc.data.orderid), 0, doc)
-          console.log(`sorted-${i}`, [doc.data.title[0].text, parseInt(doc.data.orderid), list[parseInt(doc.data.orderid)]])
+          ,     order = parseInt(doc.data.orderid)
+          list.splice(order - 1, 1, doc)
         } 
-        console.log('list', list)
       }
       return list
     }
-  }
+  },
 }
 </script>
 
@@ -191,7 +193,7 @@ export default {
 
 @include media (l) {
   .ac-navgrid_wrapper {
-    padding: 50px 80px;
+    padding: 50px 80px 25px;
   }
   .ac-navgrid_grid {
     grid-gap: 50px;
@@ -207,7 +209,7 @@ export default {
     transform-origin: top left;
     width: 150%;
     top: 130%;
-    left: 0.7vw;
+    left: 0.5vw;
 
     span {
       animation: defile 30s infinite alternate;
