@@ -36,7 +36,7 @@ export default {
   },
   methods: {
     scrollTop() {
-      // document.documentElement.scroll({top: 0, behavior: 'smooth'})
+      document.documentElement.scroll({top: 0, behavior: 'smooth'})
     }
   },
   computed: {
