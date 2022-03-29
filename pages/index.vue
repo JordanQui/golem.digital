@@ -5,7 +5,7 @@
       <div ref="caroussel" class="ac-project_caroussel-wrapper">
         <div class="ac-project_caroussel-item">
           <img v-if="document.data.caroussel[0].image01.url" :src="document.data.caroussel[0].image01.url" :alt="document.data.caroussel[0].image01.alt">
-          <video  webkit-playsinline playsinline autoplay controls="hidden" muted loop v-else-if="document.data.caroussel[0].video.url" :src="document.data.caroussel[0].video.url"></video>
+          <video webkit-playsinline playsinline autoplay controls="hidden" muted loop v-else-if="document.data.caroussel[0].video.url" :src="document.data.caroussel[0].video.url"></video>
         </div>
       </div>
     </div>
@@ -13,8 +13,6 @@
 </template>
 
 <script>
-
-
 export default {
   name: 'Home',
   layout: 'default',
