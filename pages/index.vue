@@ -37,7 +37,7 @@ export default {
     setTimeout(() => {
       if(document.documentElement.scrollTop > 10) return
       document.documentElement.scroll({top: window.innerHeight,behavior:'smooth'})
-    },3000)
+    },2200)
   },
 }
 </script>
