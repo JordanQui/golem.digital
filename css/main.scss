@@ -7,8 +7,9 @@ html {
   overflow-anchor: none;
   text-size-adjust: 100%;
   webkit-font-smoothing: antialiased;
+  scroll-behavior: initial;
+  
 }
-
 html.no-scroll {
   overflow: hidden;
 }
@@ -18,7 +19,8 @@ html::-webkit-scrollbar {
 }
 
 body {
-  overscroll-behavior-x: none;
+  overscroll-behavior-y: none;
+  scroll-behavior: initial;
 }
 
 a {
