@@ -102,6 +102,7 @@ export default {
 
     &-item {
       position: relative;
+      height: 32vw;
 
       &:hover {
         .ac-navgrid_grid-item-legend {
@@ -198,6 +199,10 @@ export default {
   .ac-navgrid_grid {
     grid-gap: 50px;
     grid-template-columns: repeat(3, 1fr);
+
+    &-item {
+      height: 19vw;
+    }
   }
   .ac-navgrid_grid-item-legend {
     font-size: 30px;

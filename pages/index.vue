@@ -43,5 +43,4 @@ export default {
 <style lang="scss">
 @import '@/css/project.scss';
 
-
 </style>
