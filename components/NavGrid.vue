@@ -107,6 +107,7 @@ export default {
       &:hover {
         .ac-navgrid_grid-item-legend {
           opacity: 1;
+          transition: opacity .3s ease-in;
         }
       }
       &-legend.active {
@@ -114,6 +115,7 @@ export default {
           color: black;
           background: white;
           mix-blend-mode: difference;
+          transition: opacity .3s ease-in;
       }
 
       &-legend {
