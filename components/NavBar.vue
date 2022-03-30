@@ -158,6 +158,14 @@ export default {
       order: 3;
     } 
 
+    &-item:nth-child(2) {
+      order: 2;
+    } 
+
+    &-item:nth-child(3) {
+      order: 1;
+    } 
+
      &-wrapper {
       display: flex;
       flex-direction: column;
