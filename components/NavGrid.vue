@@ -35,7 +35,7 @@ export default {
   methods: {
     scrollUp(b) {
       if(b) {
-        this.$gsap.to(document.documentElement, {duration: 1, scrollTo: 0})
+        document.documentElement.scroll({top: 0, behavior: 'smooth'})
       }
     },
     isOnSame(project) {
