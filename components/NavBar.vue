@@ -155,7 +155,7 @@ export default {
     height: 150px;
 
     &-item:first-child {
-      order: 3;
+      order: 1;
     } 
 
     &-item:nth-child(2) {
@@ -163,7 +163,7 @@ export default {
     } 
 
     &-item:nth-child(3) {
-      order: 1;
+      order: 3;
     } 
 
      &-wrapper {
