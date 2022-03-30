@@ -6,7 +6,7 @@
       </section>
       <section class="ac-navgrid_grid">
         <div v-for="project in sortProjects" :key="project.id" class="ac-navgrid_grid-item">
-          <nuxt-link :to="`/project/${project.uid}`" @click.native="scrollUp($route.path.includes(project.uid))" class="ac-navgrid_grid-itemWrapper">
+          <nuxt-link :to="`/project/${project.uid}`" @click.native="scrollUp(project.uid)" class="ac-navgrid_grid-itemWrapper">
             <nuxt-img preload :src="project.data.caroussel[0].image01.url" :alt="project.data.caroussel[0].image01.alt" sizes="sm:300px md:50vw lg:800px xl:1600px" format="webp"/>
             <div class="ac-navgrid_grid-item-legend">
               <span class="ac-navgrid_grid-item-legend-text">{{ project.data.title[0].text }}</span>
@@ -24,6 +24,7 @@ export default {
   data() {
     return {
       document: {},
+      currentRoute: '',
     }
   },
   async fetch() {
@@ -32,9 +33,14 @@ export default {
       this.$prismic.predicates.not('my.project.uid', 'home')
     ])
   },
+  watch: {
+    $route(to, from) {
+      this.currentRoute = to.path
+    }
+  },
   methods: {
-    scrollUp(b) {
-      if(b) {
+    scrollUp(project) {
+      if(this.currentRoute.includes(project)) {
         document.documentElement.scroll({top: 0, behavior: 'smooth'})
       }
     },
