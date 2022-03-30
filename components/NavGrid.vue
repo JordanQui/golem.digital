@@ -34,8 +34,9 @@ export default {
   },
   methods: {
     scrollTop(event) {
+      const gsap = this.$gsap
       event.preventDefault()
-      document.documentElement.scroll({top: 0, behavior: 'smooth'})
+      gsap.to(document.documentElement, {duration: 1, scrollTo: {y: 0, x: 0}});
     }
   },
   computed: {
