@@ -66,6 +66,18 @@ export default {
   z-index: 20 !important;
   mix-blend-mode: difference;
 
+  &-item:first-child {
+      order: 3;
+    } 
+
+    &-item:nth-child(2) {
+      order: 2;
+    } 
+
+    &-item:nth-child(3) {
+      order: 1;
+    } 
+
   &-grid {
     position: fixed;
     top: 0;
