@@ -7,7 +7,7 @@ html {
   overflow-anchor: none;
   text-size-adjust: 100%;
   webkit-font-smoothing: antialiased;
-  scroll-behavior: initial;
+  // scroll-behavior: initial;
   
 }
 html.no-scroll {
@@ -20,7 +20,7 @@ html::-webkit-scrollbar {
 
 body {
   overscroll-behavior-y: none;
-  scroll-behavior: initial;
+  // scroll-behavior: initial;
 }
 
 a {
