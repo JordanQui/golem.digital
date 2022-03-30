@@ -111,6 +111,9 @@ export default {
       }
       &-legend.active {
           opacity: 1;
+          color: black;
+          background: white;
+          mix-blend-mode: difference;
       }
 
       &-legend {
