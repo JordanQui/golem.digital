@@ -35,7 +35,7 @@ export default {
   methods: {
     scrollTop(project) {
       if(this.$route.path.includes(project)) {
-        this.$gsap.to(document.documentElement, {duration: 1, scrollTo: 0});
+        this.$gsap.to(document.documentElement, {duration: 1, scrollTo: {x:0,y:0}});
       }
     }
   },
