@@ -89,7 +89,7 @@ export default {
     background-color: black;
     color: white;
     position: absolute;
-    top: 40%;
+    top: 43%;
     left: 50%;
     transform: translate(-50%, -50%);
     box-shadow: 20px 20px 0px -5px #555555;

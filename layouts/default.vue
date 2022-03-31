@@ -4,6 +4,7 @@
     class="ac-layoutWrapper" 
   >
     <span ref="bg" class="ac-layoutBackground"></span>
+    <span class="ac-rideau"></span>
     <LoadSpinner v-if="showHideSpinner" />
     <NavBar />
     <Nuxt />
@@ -92,6 +93,19 @@ export default {
   & > * {
     z-index: 10;
   }
+}
+
+.ac-rideau {
+  position: fixed;
+  will-change: opacity;
+  z-index: 11;
+  display: block;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  background-color: #000;
 }
 
 .ac-layoutBackground {

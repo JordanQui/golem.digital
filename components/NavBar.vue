@@ -162,7 +162,7 @@ export default {
     position: fixed; 
     top: 0;
     right: 0;
-    margin: 25px 12px;
+    margin: 25px 13px;
     width: auto;
     height: 150px;
 

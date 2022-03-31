@@ -49,6 +49,31 @@ export default {
     "@nuxt/image",
   ],
 
+  pageTransition: {
+    name: 'project',
+    mode: 'out-in',
+    beforeEnter(el, done) {
+      console.log('beforeenter')
+    },
+    afterLeave(el) {
+      console.log('afterLeave', el)
+    },
+    beforeLeave(el) {
+      console.log('beforeleave', el)
+    },
+    leave(el) {
+      console.log('leave')
+    },
+    afterEnter(el) {
+      console.log('afterEnter', el)
+    },
+    enter(el, done) {
+      console.log('enter', el)
+      // this.$gsap.to(document.documentElement, {scrollTo:{x:0,y:0, duration: 3}})
+      // document.documentElement.scroll({top: 0, beahvior: 'smooth'})
+    },
+  },
+
   gsap: {
     extraPlugins: {
       scrollTo: true,
