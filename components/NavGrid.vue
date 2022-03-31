@@ -180,8 +180,8 @@ export default {
 }
 
 @keyframes defile_large {
-  0% { transform: translate(0, 0%) rotate(-90deg); }
-  100% { transform: translate(0, -260%) rotate(-90deg); }
+  0% { transform: translate(4px, 0%) rotate(-90deg); }
+  100% { transform: translate(4px, -260%) rotate(-90deg); }
 }
 
 
