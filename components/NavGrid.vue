@@ -41,6 +41,7 @@ export default {
   methods: {
     scrollUp(project) {
       if(this.currentRoute.includes(project)) {
+        console.log('click on same')
         document.documentElement.scroll({top: 0, behavior: 'smooth'})
       }
     },
