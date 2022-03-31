@@ -35,7 +35,9 @@ export default {
   },
   watch: {
     $route(to, from) {
-      this.currentRoute = to.path
+      setTimeout(() => {
+        this.currentRoute = to.path
+      }, 1000)
     }
   },
   methods: {
