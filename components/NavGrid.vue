@@ -199,6 +199,10 @@ export default {
   .ac-navgrid_grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  .ac-navgrid_grid-item-legend {
+    font-size: 25px;
+    line-height: 38px;
+  }
 }
 
 @include media (m) {
@@ -206,8 +210,8 @@ export default {
     padding: 0 1%;
   }
   .ac-navgrid_grid-item-legend {
-    font-size: 25px;
-    line-height: 38px;
+    font-size: 35px;
+    line-height: 41px;
   }
   .ac-navgrid_grid {
     grid-template-columns: repeat(2, 1fr);
