@@ -34,10 +34,12 @@
 }
 
 .icon-info:before {
+  font-size: 37px !important;
   content: "\e900";
 }
 .icon-info.active:before,
 .icon-info:hover:before {
+  font-size: 37px !important;
   content: "\e906";
 }
 

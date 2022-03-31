@@ -62,7 +62,7 @@ export default {
   bottom: 0;
   right: 0;
   width: 100%;
-  padding: 20px 8.5px 20px 10px;
+  padding: 20px 10px 20px 10px;
   z-index: 20 !important;
   mix-blend-mode: difference;
 
@@ -162,7 +162,7 @@ export default {
     position: fixed; 
     top: 0;
     right: 0;
-    margin: 25px 1%;
+    margin: 25px 12px;
     width: auto;
     height: 150px;
 
