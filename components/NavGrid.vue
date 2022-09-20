@@ -2,7 +2,7 @@
   <div class="ac-navgrid">
     <div class="ac-navgrid_wrapper">
       <section class="ac-navgrid_bandeau">
-        <span v-for="n in 30" :key="n.id">golem</span>
+        <span v-for="n in 60" :key="n.id">golem</span>
       </section>
       <section class="ac-navgrid_grid">
         <div v-for="project in sortProjects" :key="project.id" class="ac-navgrid_grid-item">
@@ -238,7 +238,7 @@ export default {
     position: absolute;
     font-size: 42px;
     transform-origin: top left;
-    width: 150%;
+    width: 250%;
     top: 130%;
     left: 0.5vw;
 
