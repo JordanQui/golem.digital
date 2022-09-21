@@ -67,7 +67,7 @@ export default {
       if(this.$mq === 'sm' || this.$mq === 'md') {
         this.$refs.projectwrapper.style.height = window.innerHeight + 'px'
       } else {
-        this.$refs.projectwrapper.style.height = '100vh'
+        this.$refs.projectwrapper.style.height = 'calc(var(--vh, 1vh) * 100)'
       }
     },
     scrollToGrid() {

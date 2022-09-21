@@ -29,6 +29,8 @@ import LoadSpinner from '../components/LoadSpinner.vue'
 import { gsap, Power4 } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+import { vhCalc } from "~/plugins/utils.js"
+
 if (process.client) {
   gsap.registerPlugin(ScrollTrigger);
 }
@@ -74,6 +76,7 @@ export default {
     }
   },
   mounted() {
+    vhCalc()
     this.showHideSpinner = false
     if(!this.st) {
       this.createScrollTrigger()

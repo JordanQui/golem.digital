@@ -61,7 +61,7 @@ export default {
   position: fixed;
   top: 0;
   left: 0;
-  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   width: 100%;
   visibility: hidden;
   opacity: 0;
@@ -131,12 +131,14 @@ export default {
 
   &.light {
     .ac-modale_close {
+      z-index: 50;
       color: white;
     }
   }
 
   &.dark {
     .ac-modale_close {
+      z-index: 50;
       color: black;
     }
   }
