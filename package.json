@@ -20,7 +20,7 @@
     "nuxt-lazy-load": "1.2",
     "nuxt-modernizr": "^2.0.9",
     "nuxt-mq": "^2.0",
-    "prismic-cli": "^4.2.9",
+    "prismic-cli": "^4.2.1",
     "smoothscroll-polyfill": "^0.4.4",
     "v-click-outside": "^3.1.2",
     "vue-observe-visibility": "^1.0.0"
