@@ -7,9 +7,16 @@
       <section class="ac-navgrid_grid">
         <div v-for="project in sortProjects" :key="project.id" class="ac-navgrid_grid-item">
           <nuxt-link :to="`/project/${project.uid}`" @click.native="scrollUp(project.uid)" class="ac-navgrid_grid-itemWrapper">
-            <nuxt-img preload :src="project.data.caroussel[0].image01.url" :alt="project.data.caroussel[0].image01.alt" sizes="sm:300px md:50vw lg:800px xl:1600px" format="webp"/>
+            <nuxt-img
+              v-if="project.heroImage"
+              preload
+              :src="project.heroImage.url"
+              :alt="project.heroImage.alt"
+              sizes="sm:300px md:50vw lg:800px xl:1600px"
+              format="webp"
+            />
             <div class="ac-navgrid_grid-item-legend">
-              <span class="ac-navgrid_grid-item-legend-text">{{ project.data.title[0].text }}</span>
+              <span class="ac-navgrid_grid-item-legend-text">{{ projectTitle(project) }}</span>
             </div>
           </nuxt-link>
         </div>
@@ -49,22 +56,35 @@ export default {
     },
     isOnSame(project) {
       return this.$route.path.includes(project)
+    },
+    projectTitle(project) {
+      return project?.data?.title?.[0]?.text || ''
     }
   },
   computed: {
     sortProjects() {
-      const projectNbr = this.document.results.length
-      let list = new Array(projectNbr)
-      list.fill(0, 0, projectNbr)
-      
-      if(Object.keys(this.document).length !== 0) {
-        for(let i = 0; i < projectNbr; i++) {
-          const doc = this.document.results[i]
-          ,     order = parseInt(doc.data.orderid)
-          list.splice(order - 1, 1, doc)
-        } 
-      }
+      const results = this.document?.results ?? []
+      const list = []
+
+      results.forEach((doc) => {
+        const order = parseInt(doc?.data?.orderid, 10)
+
+        if (Number.isFinite(order) && order > 0) {
+          list[order - 1] = doc
+        } else {
+          list.push(doc)
+        }
+      })
+
       return list
+        .filter((project) => project?.data?.caroussel?.[0]?.image01?.url)
+        .map((project) => ({
+          ...project,
+          heroImage: {
+            url: project.data.caroussel[0].image01.url,
+            alt: project.data.caroussel[0].image01.alt || project.data?.title?.[0]?.text || '',
+          },
+        }))
     },
   },
 }
