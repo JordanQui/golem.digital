@@ -14,7 +14,7 @@
     </div>
 
     <div class="ac-mail_container">
-      <div class="ac-mail_label">ariel claudet</div>
+      <div class="ac-mail_label">ariel andré</div>
       <prismic-link :field="document.data.mail" target="_blank" class="ac-mail_link">ariel@golem.digital</prismic-link>
     </div>
 
